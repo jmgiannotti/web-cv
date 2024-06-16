@@ -1,0 +1,36 @@
+<div class="full-screen-container">
+  <div class="middle-third">
+
+    <mat-card class="card">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>
+          Juan Martin Giannotti Calens
+        </mat-card-title>
+        <mat-card-subtitle>
+          <img class="github-logo" alt="" src="https://cdn-icons-png.flaticon.com/256/25/25231.png"/>
+          <a href="https://github.com/jmgiannotti">&#64;jmgiannotti </a>
+        </mat-card-subtitle>
+      </mat-card-header>
+      <br>
+      <mat-card-content>
+        <mat-card-subtitle><h6>Profile</h6></mat-card-subtitle>
+        {{ profiletxt }}
+        <mat-card-subtitle><h6>Skills</h6></mat-card-subtitle>
+        <mat-chip-set aria-label="Dog selection">
+          @for (chip of chips; track chip) {
+            <mat-chip>
+              <img
+                matChipAvatar
+                src="{{chip.img}}"
+                alt="F"
+              />
+              {{ chip.title }}
+            </mat-chip>
+          }
+        </mat-chip-set>
+      </mat-card-content>
+
+    </mat-card>
+  </div>
+</div>

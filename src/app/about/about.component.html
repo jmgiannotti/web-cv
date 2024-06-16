@@ -1,0 +1,28 @@
+<div class="full-screen-container">
+  <div class="middle-third">
+    <div class="container-cards">
+      <mat-card class="card">
+        <mat-card-header>
+          <mat-card-title><p>About Me</p></mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          {{ txt }}
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card class="card">
+        <mat-card-header>
+          <mat-card-title><p>Proyects</p></mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          @for (proyect of proyects; track proyect.title){
+
+            {{ txt }}
+
+          }
+
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,34 @@
+.full-screen-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Ocupa toda la altura de la pantalla */
+}
+.card{
+  max-width: 38%;
+}
+.middle-third {
+  margin-top: 2%  ;
+  flex: 1; /* Ocupa un tercio de la pantalla */
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+
+}
+.example-header-image {
+  background-image: url('https://github.com/jmgiannotti.png');
+  background-size: cover;
+}
+
+.github-logo {
+  width: 1.5em; /* Ajusta este tamaño según tus necesidades */
+  height: 1.5em; /* Asegura que la altura sea proporcional */
+  vertical-align: middle; /* Alinea verticalmente con el texto */
+  margin-right: 0.5em; /* Añade un margen derecho para separar el logo del texto */
+}
+
+@media (max-width: 768px) {
+  /* Adjustments for mobile screens */
+  .card{
+    max-width: 90% !important;
+  }
+}

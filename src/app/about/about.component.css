@@ -1,0 +1,25 @@
+
+
+.container-cards{
+  display: flex;
+  flex-direction: row;
+  align-content: space-evenly;
+  justify-content: space-evenly;
+  justify-items: start;
+}
+
+.middle-third {
+  margin-top: 2%  ;
+  flex: 1; /* Ocupa un tercio de la pantalla */
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+
+}
+.card{
+  max-width: 38%;
+}
+
+.full-screen-container {
+
+}

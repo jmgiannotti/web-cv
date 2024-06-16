@@ -1,0 +1,22 @@
+.title-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  margin: 0;
+}
+
+.subtitle {
+  margin: 10px 0 0;
+}
+
+.middle-third {
+  margin-top: 2%  ;
+  flex: 1; /* Ocupa un tercio de la pantalla */
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+
+}
