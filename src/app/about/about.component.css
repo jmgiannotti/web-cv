@@ -16,6 +16,24 @@
   align-items: baseline;
 
 }
+
+.card-p{
+  margin-top: 0.7em;
+  background: #294455;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+
+.card-p:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(100, 100, 100, 0.2);
+}
+
+.card-p:active {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
 .card{
   max-width: 38%;
 }

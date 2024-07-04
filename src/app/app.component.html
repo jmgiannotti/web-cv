@@ -7,11 +7,11 @@
 
   <mat-tab-group fitInkBarToContent>
     <mat-tab label="About me | Proyects">
-        <app-about></app-about>
+        <app-about [chips]="chipsApp"></app-about>
     </mat-tab>
     <mat-tab label="Curriculum Vitae">
       @defer () {
-        <app-curriculum></app-curriculum>
+        <app-curriculum [chips]="chipsApp" ></app-curriculum>
       }
     </mat-tab>
   </mat-tab-group>

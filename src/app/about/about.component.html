@@ -1,28 +1,47 @@
 <div class="full-screen-container">
-  <div class="middle-third">
-    <div class="container-cards">
-      <mat-card class="card">
-        <mat-card-header>
-          <mat-card-title><p>About Me</p></mat-card-title>
-        </mat-card-header>
-        <mat-card-content>
-          {{ txt }}
-        </mat-card-content>
-      </mat-card>
+    <div class="middle-third">
+        <div class="container-cards">
+            <mat-card class="card">
+                <mat-card-header>
+                    <mat-card-title><p>About Me</p></mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    {{ txt }}
+                </mat-card-content>
+            </mat-card>
 
-      <mat-card class="card">
-        <mat-card-header>
-          <mat-card-title><p>Proyects</p></mat-card-title>
-        </mat-card-header>
-        <mat-card-content>
-          @for (proyect of proyects; track proyect.title){
+            <mat-card class="card">
+                <mat-card-header>
+                    <mat-card-title><p>Proyects</p></mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                  @for (proyect of proyects; track proyect.title){
+                    <mat-card class="card-p" (click)="openDialog(proyect)">
 
-            {{ txt }}
+                      <mat-card-header>
+                        <mat-card-title><p>{{proyect.title}}</p></mat-card-title>
+                        <mat-card-subtitle>{{proyect.description}}</mat-card-subtitle>
+                      </mat-card-header>
+                      <mat-card-content>
+                        <mat-chip-set>
+                          @for (chip of chips; track chip.title) {
+                            @if (chip.title.includes(proyect.stack[0]) || chip.title.includes(proyect.stack[1])  ){
+                            <mat-chip>
+                              <img
+                                matChipAvatar
+                                src="{{chip.img}}"
+                                alt="F"
+                              />
+                              {{ chip.title }}
+                            </mat-chip>
+                          }}
+                        </mat-chip-set>
+                      </mat-card-content>
+                    </mat-card>
 
-          }
-
-        </mat-card-content>
-      </mat-card>
+                  }
+                </mat-card-content>
+            </mat-card>
+        </div>
     </div>
-  </div>
 </div>
