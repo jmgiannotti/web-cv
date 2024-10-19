@@ -14,6 +14,11 @@
   align-items: baseline;
 
 }
+
+.subtitles-cv{
+  margin-top: 3%;
+}
+
 .example-header-image {
   background-image: url('https://github.com/jmgiannotti.png');
   background-size: cover;

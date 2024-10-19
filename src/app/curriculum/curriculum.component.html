@@ -12,11 +12,22 @@
           <a href="https://github.com/jmgiannotti">&#64;jmgiannotti </a>
         </mat-card-subtitle>
       </mat-card-header>
-      <br>
-      <mat-card-content>
-        <mat-card-subtitle><h6>Profile</h6></mat-card-subtitle>
-        {{ profiletxt }}
-        <mat-card-subtitle><h6>Skills</h6></mat-card-subtitle>
+
+      <mat-card-content style="margin-top: 1.5%">
+        <mat-card-subtitle><h6>Perfil</h6></mat-card-subtitle>
+        {{ profileTxt }}
+        <mat-card-subtitle class="subtitles-cv" ><h6>Educacion</h6></mat-card-subtitle>
+        <ul>
+          <li>{{educationTxt}}</li>
+          <br>
+          <li>{{educacionTxt2}}</li>
+        </ul>
+
+        <mat-card-subtitle class="subtitles-cv" ><h6>Idioma</h6></mat-card-subtitle>
+        {{languageTxt}}
+        <mat-card-subtitle class="subtitles-cv" ><h6>Experiencia</h6></mat-card-subtitle>
+        {{experienceTxt}}
+        <mat-card-subtitle class="subtitles-cv" ><h6>Aptitudes</h6></mat-card-subtitle>
         <mat-chip-set>
           @for (chip of chips; track chip) {
             <mat-chip>

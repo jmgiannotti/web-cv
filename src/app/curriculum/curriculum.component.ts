@@ -16,6 +16,16 @@ import {MatChip, MatChipAvatar, MatChipSet} from "@angular/material/chips";
   styleUrl: './curriculum.component.css'
 })
 export class CurriculumComponent {
-  profiletxt = "With ease of teamwork, efficient communication, and discipline, practicing in every project I can undertake with my colleagues, always with the willingness to surpass myself, learn, and generate creative ideas to overcome the challenges that arise."
-  @Input() chips: any; // error al poner []
+
+  profileTxt = "Con facilidad para trabajar en equipo, comunicación eficiente y disciplinado, practicando en cada proyecto que pude realizar con mis compañeros." +
+    " Siempre con la predisposición de superarme, aprender y generar ideas creativas para la resolución de los desafíos que se presenten."
+
+
+
+
+  educationTxt = "Analista en sistemas - Instituto ORT terciario - Finalizado - Año 2023"
+  educacionTxt2 = "Ingeniero en informatica - UCEMA - En curso - Año 2024"
+  experienceTxt = "Junior backend developer - Xenio - Freelance"
+  languageTxt = "Ingles - Intermedio"
+  @Input() chips: any; // error al poner [] (array vacio)
 }

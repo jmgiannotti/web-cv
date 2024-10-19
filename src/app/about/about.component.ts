@@ -21,14 +21,13 @@ export class AboutComponent {
 
   constructor(private dialog: MatDialog) { }
 
-  txt = "Gilgamesh y sus epoopeyas epicas trancurren durante el tiempo de las increibles y doradas epocas" +
-    " en las que el sol brilla y se pone bajo una sola bandera de unidad"
+  txt = "Soy estudiante de ingenieria en informatica en la UCEMA, hice el terciario de analista de sistemas en la ort. Alli aprendi a trabajar en equipo, a realizar y gestionar un proyecto utilizando Scrum. El terciario me enseño a escribir codigo limpio, simple, haciendo incapie en seguir las buenas practicas. En los proyectos academicos he llegado a utilizar kotlin para una app mobile, Javascript para los frameworks de backend y frontend y Java para aprender los fundamentos de la POO. Acompañados de frameworks como Node y Vue. Por mi parte decidi primero sumar Spring para aprovechar mi conocimiento tecnico en java, despues quise sumar Golang por su versatilidad en su uso. Por ultimo me llamo la atencion Angular por ser un framework muy utilizado en la industria. A nivel personal realizo de manera federada voley, otros de mis hobbys son el armado de legos y el gaming"
 
   proyects =
     [{stack: ["VueJs", "Spring"], description: "Busqueda y reseña de libros", title: "Libreria Espiral", descriptionL: "La idea principal de esta app es practicar el MVC utilizando Spring y consumir un servicio, todo de manera asincrona. Aprender el manejo de request y como se mandan y reciben los datos en este framework. A nivel funcionalidad golpea al servicio"},
       {
         stack: ["VueJs", "NodeJs"],
-        description: "Muestra en el mapa las estaciones meteorologicas, utiliza el ecosistema de fiware para obtener los datos de estas",
+        description: "Muestra en el mapa las estaciones meteorologicas y las lista en un dashboard lateral",
         title: "RespirAR",
         descriptionL: "La idea principal de esta app es practicar el MVC utilizando Spring y consumir un servicio, todo de manera asincrona. Aprender el manejo de request y como se mandan y reciben los datos en este framework. A nivel funcionalidad golpea al servicio"
       }]
