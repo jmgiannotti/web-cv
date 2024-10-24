@@ -7,6 +7,14 @@
   justify-content: space-evenly;
   justify-items: start;
 }
+mat-expansion-panel {
+  background-color: #294455;
+  margin-bottom: 10px;
+}
+
+mat-panel-title {
+  font-size: 1.2rem;
+}
 
 .middle-third {
   margin-top: 2%  ;
@@ -35,7 +43,7 @@
 }
 
 .card{
-  max-width: 38%;
+  max-width: 40%;
 }
 
 .full-screen-container {

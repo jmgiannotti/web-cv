@@ -3,6 +3,7 @@ import {MatCardModule} from "@angular/material/card";
 import {MatChip, MatChipAvatar, MatChipSet} from "@angular/material/chips";
 import {MatDialog} from "@angular/material/dialog";
 import { DialogComponent } from '../dialog/dialog.component';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 @Component({
   selector: 'app-about',
@@ -11,7 +12,8 @@ import { DialogComponent } from '../dialog/dialog.component';
     MatCardModule,
     MatChip,
     MatChipAvatar,
-    MatChipSet
+    MatChipSet,
+    MatExpansionModule
   ],
   templateUrl: './about.component.html',
   styleUrl: './about.component.css'
