@@ -1,12 +1,63 @@
-
-
-.container-cards{
+/* Estilos principales del contenedor de tarjetas */
+.container-cards {
   display: flex;
   flex-direction: row;
   align-content: space-evenly;
   justify-content: space-evenly;
-  justify-items: start;
+  flex-wrap: wrap; /* Permite que las tarjetas se ajusten en múltiples filas si es necesario */
+  gap: 20px; /* Espacio entre las tarjetas */
+  margin: 0 auto;
 }
+mat-expansion-panel {
+  margin-bottom: 10px;
+  flex: 1; /* Hace que cada panel se expanda proporcionalmente */
+}
+
+
+/* Estilos generales para la tarjeta */
+.card {
+  max-width: 40%; /* Ocupa el 40% del ancho en pantallas grandes */
+  margin: 10px; /* Margen alrededor de cada tarjeta */
+}
+
+.card {
+  max-width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Distribuye de manera uniforme */
+  padding: 1em;
+  height: 100%; /* Ocupa el 100% del contenedor padre */
+}
+
+/* Estilos para pantallas medianas */
+@media screen and (max-width: 768px) {
+  .card {
+    max-width: 90%;
+    margin: 10px auto; /* Centra la tarjeta */
+  }
+}
+
+/* Estilos para pantallas pequeñas (móviles) */
+@media screen and (max-width: 480px) {
+  .card {
+    max-width: 100%; /* Toma el 100% del ancho del teléfono */
+    margin: 10px 0; /* Espacio vertical entre las tarjetas */
+  }
+
+  .container-cards {
+    flex-direction: column; /* Alinea las tarjetas en columna en pantallas pequeñas */
+  }
+
+  mat-card-title, mat-card-subtitle {
+    font-size: 1rem; /* Reduce el tamaño del texto para pantallas pequeñas */
+  }
+
+  .mat-accordion {
+    font-size: 0.9rem; /* Ajuste adicional para mejorar la legibilidad */
+  }
+}
+
+/* Estilos específicos para los paneles de expansión */
 mat-expansion-panel {
   background-color: #294455;
   margin-bottom: 10px;
@@ -17,15 +68,15 @@ mat-panel-title {
 }
 
 .middle-third {
-  margin-top: 2%  ;
+  margin-top: 2%;
   flex: 1; /* Ocupa un tercio de la pantalla */
   display: flex;
   justify-content: center;
   align-items: baseline;
-
 }
 
-.card-p{
+/* Estilos para la tarjeta de proyectos */
+.card-p {
   margin-top: 0.7em;
   background: #294455;
   transition: transform 0.3s, box-shadow 0.3s;
@@ -40,12 +91,4 @@ mat-panel-title {
 .card-p:active {
   transform: translateY(-2px);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-.card{
-  max-width: 40%;
-}
-
-.full-screen-container {
-
 }

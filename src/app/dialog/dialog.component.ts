@@ -7,6 +7,7 @@ import {
   MatDialogTitle
 } from "@angular/material/dialog";
 import {MatButton} from "@angular/material/button";
+import {CarouselComponent} from "../carousel/carousel.component";
 
 @Component({
   selector: 'app-dialog',
@@ -16,7 +17,8 @@ import {MatButton} from "@angular/material/button";
     MatDialogActions,
     MatDialogClose,
     MatButton,
-    MatDialogTitle
+    MatDialogTitle,
+    CarouselComponent
   ],
   templateUrl: './dialog.component.html',
   styleUrl: './dialog.component.css'

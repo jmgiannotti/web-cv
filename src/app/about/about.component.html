@@ -13,7 +13,7 @@
               <mat-expansion-panel-header>
                 <mat-panel-title>Educación</mat-panel-title>
               </mat-expansion-panel-header>
-              <p>Soy estudiante de ingeniería en informática en la UCEMA...</p>
+              <p>{{educationContent}}</p>
             </mat-expansion-panel>
 
             <!-- Sección 2: Experiencia Académica -->
@@ -21,7 +21,7 @@
               <mat-expansion-panel-header>
                 <mat-panel-title>Experiencia Académica</mat-panel-title>
               </mat-expansion-panel-header>
-              <p>En los proyectos académicos he utilizado Kotlin para una app móvil, Javascript para los frameworks de backend y frontend...</p>
+              <p>{{academicExperienceContent}}</p>
             </mat-expansion-panel>
 
             <!-- Sección 3: Tecnologías Aprendidas -->
@@ -29,7 +29,7 @@
               <mat-expansion-panel-header>
                 <mat-panel-title>Tecnologías Aprendidas</mat-panel-title>
               </mat-expansion-panel-header>
-              <p>Primero decidí sumar Spring para aprovechar mi conocimiento en Java, después quise sumar Golang por su versatilidad...</p>
+              <p>{{learnedTechnologiesContent}}</p>
             </mat-expansion-panel>
 
             <!-- Sección 4: Intereses Personales -->
@@ -37,13 +37,12 @@
               <mat-expansion-panel-header>
                 <mat-panel-title>Intereses Personales</mat-panel-title>
               </mat-expansion-panel-header>
-              <p>A nivel personal realizo voley de manera federada, otros de mis hobbies son los legos y el gaming...</p>
+              <p>{{personalInterestsContent}}</p>
             </mat-expansion-panel>
           </mat-accordion>
         </mat-card-content>
       </mat-card>
 
-      <!-- Card: Proyectos (no modificado, mantiene la estructura original) -->
       <mat-card class="card">
         <mat-card-header>
           <mat-card-title><p>Proyectos</p></mat-card-title>
