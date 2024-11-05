@@ -1,14 +1,14 @@
 <h1 mat-dialog-title>{{ data.title }}</h1>
-<mat-dialog-content >
+<mat-dialog-content>
   <div class="dialog-content">
 
-    <app-carousel [images]=data.images style="  max-width: 70%;
-  width: fit-content;
+    <app-carousel [images]=data.images style="
+  width: 100%;
   block-size: auto;
   margin:1em;"></app-carousel>
 
-  <!---<img [src]= data.image alt="Imagen del proyecto" class="project-image"> -->
-  <p>{{ data.descriptionL }}</p>
+    <!---<img [src]= data.image alt="Imagen del proyecto" class="project-image"> -->
+    <p>{{ data.descriptionL }}</p>
   </div>
 </mat-dialog-content>
 <mat-dialog-actions>

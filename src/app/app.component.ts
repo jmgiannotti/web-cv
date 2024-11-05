@@ -44,6 +44,15 @@ export class AppComponent {
         title: 'Docker',
         img: 'https://img.icons8.com/?size=100&id=cdYUlRaag9G9&format=png&color=000000'
       },
+      {
+        title: 'Kotlin',
+        img: 'https://img.icons8.com/?size=100&id=ZoxjA0jZDdFZ&format=png&color=000000'
+      },
+      {
+        title: 'Firebase',
+        img: 'https://img.icons8.com/?size=100&id=62452&format=png&color=000000'
+      }
+
 
     ]
 }

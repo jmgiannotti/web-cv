@@ -38,15 +38,25 @@ Además, disfruto del armado de legos y soy un apasionado del gaming, que me per
       {
         stack: ["VueJs", "Spring"],
         description: "Busqueda y reseña de libros",
-        images: ['assets/images/LibreriaEspiral-cap.png', 'https://cdn.thewirecutter.com/wp-content/media/2022/03/elden-ring-2048px-0003.jpg?auto=webp&quality=75&width=1024', 'https://cdn.thewirecutter.com/wp-content/media/2022/03/elden-ring-2048px-0003.jpg?auto=webp&quality=75&width=1024'],
+        images: ['assets/images/LibreriaEspiral-cap1.png', 'https://cdn.thewirecutter.com/wp-content/media/2022/03/elden-ring-2048px-0003.jpg?auto=webp&quality=75&width=1024', 'https://cdn.thewirecutter.com/wp-content/media/2022/03/elden-ring-2048px-0003.jpg?auto=webp&quality=75&width=1024'],
         title: "Libreria Espiral",
-        descriptionL: "La idea principal de esta app es practicar el MVC utilizando Spring y consumir un servicio, todo de manera asincrona. Aprender el manejo de request y como se mandan y reciben los datos en este framework. A nivel funcionalidad golpea al servicio"},
+        descriptionL: "Librería Espiral es una aplicación pensada para la búsqueda y reseña de libros, similar a la experiencia de CinePlus, pero centrada en literatura. Desarrollada en Vue.js y Spring, este proyecto me permitió aprender a fondo el patrón MVC en Spring, realizando solicitudes y procesando datos de manera asíncrona. Aunque la app aún está en desarrollo, ya cuenta con funcionalidades clave para explorar y descubrir libros organizados por categorías."
+      },
       {
         stack: ["VueJs", "NodeJs"],
         description: "Muestra en el mapa las estaciones meteorologicas y las lista en un dashboard lateral",
-        images: ['assets/images/RespirAR-cap.png'],
+        images: ['assets/images/RespirAR-cap1.png', 'assets/images/RespirAR-cap2.png',  'assets/images/RespirAR-cap3.png'],
         title: "RespirAR",
-        descriptionL: "La idea principal de esta app es practicar el MVC utilizando Spring y consumir un servicio, todo de manera asincrona. Aprender el manejo de request y como se mandan y reciben los datos en este framework. A nivel funcionalidad golpea al servicio"
+        descriptionL: "Aplicación desarrollada para \"Ciudades del Futuro\", diseñada para visualizar estaciones meteorológicas en un mapa y listarlas en un panel lateral. El reto clave fue implementar el framework de IoT \"Fiware\", cumpliendo con un requisito exclusivo del cliente y adaptando el entorno de desarrollo a contenedores Docker."
+      },
+      {
+        stack: ["Kotlin", "Firebase"],
+        description: "App mobile que muestra peliculas, sus detalles y permite realizar comentarios",
+        images: ['assets/images/Cineplus-cap1.png', 'assets/images/Cineplus-cap2.png'],
+        title: "CinePlus",
+        descriptionL: "Aplicación móvil para ver detalles de películas y dejar comentarios, con integración de una API de películas y almacenamiento en Firebase. Este proyecto ayudó a consolidar habilidades en arquitectura de aplicaciones móviles y almacenamiento de datos, tanto del usuario como de contenido relevante, en Firebase."
+
+
       }]
 
   openDialog(proyect: { stack: string[]; description: string; title: string }): void {
