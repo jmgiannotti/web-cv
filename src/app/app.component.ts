@@ -4,11 +4,13 @@ import {MatTab, MatTabGroup} from "@angular/material/tabs";
 import {NavbarComponent} from "./navbar/navbar.component";
 import {CurriculumComponent} from "./curriculum/curriculum.component";
 import {AboutComponent} from "./about/about.component";
+import {ParticlesBackgroundComponent} from "./particles-background/particles-background.component";
+
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NavbarComponent, MatTab, MatTabGroup, CurriculumComponent, AboutComponent,],
+  imports: [RouterOutlet, NavbarComponent, MatTab, MatTabGroup, CurriculumComponent, AboutComponent,ParticlesBackgroundComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -52,7 +54,5 @@ export class AppComponent {
         title: 'Firebase',
         img: 'https://img.icons8.com/?size=100&id=62452&format=png&color=000000'
       }
-
-
     ]
 }

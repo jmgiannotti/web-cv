@@ -62,10 +62,10 @@ Además, disfruto del armado de legos y soy un apasionado del gaming, que me per
   openDialog(proyect: { stack: string[]; description: string; title: string }): void {
     this.dialog.open(DialogComponent, {
       data: proyect,
-      maxWidth: '75vw',
-      maxHeight: '75vh',
-      width: '75vw',
-      height: '75vh'
+      maxWidth: '140vw',
+      maxHeight: '140vh',
+      width: '80vw',
+
     });
   }
 

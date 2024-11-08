@@ -12,13 +12,32 @@ h1{
   text-align: center;
   font-size: 1.5em;
 }
+.project-desc{
+  padding-left: 4em;
+  padding-right: 4em;
+  text-align: start;
+  line-height: 1.40em;
+}
 
 @media (max-width: 600px) {
+  h1{
+    display: flex;
+    justify-content: center;
+    font-size: 1.5em !important;
+    margin-top: 0.2em;
+  }
   .dialog-content {
     width: 90vw;  /* Ajusta el ancho a un 90% del viewport */
     max-width: 100%;
     height: auto;  /* Permite que el diálogo se adapte al contenido */
-    padding: 16px;  /* Reduce el padding para maximizar el espacio */
+
+  }
+  .project-desc{
+    padding-left: 0.4em;
+    padding-right: 0.2em;
+    text-align: start;
+    font-size: 0.8em
+
   }
   .dialog-image {
     width: 100%;
@@ -28,6 +47,8 @@ h1{
     font-size: 1rem;  /* Reduce el tamaño de fuente en móviles */
   }
 }
+
+
 
 .project-image {
   max-width: 70%;
