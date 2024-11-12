@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import {MatTab, MatTabGroup} from "@angular/material/tabs";
-import {NavbarComponent} from "./navbar/navbar.component";
 import {CurriculumComponent} from "./curriculum/curriculum.component";
 import {AboutComponent} from "./about/about.component";
 import {ParticlesBackgroundComponent} from "./particles-background/particles-background.component";
@@ -10,7 +9,7 @@ import {ParticlesBackgroundComponent} from "./particles-background/particles-bac
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NavbarComponent, MatTab, MatTabGroup, CurriculumComponent, AboutComponent,ParticlesBackgroundComponent],
+  imports: [RouterOutlet, MatTab, MatTabGroup, CurriculumComponent, AboutComponent,ParticlesBackgroundComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
