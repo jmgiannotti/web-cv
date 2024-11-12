@@ -23,7 +23,7 @@ export class CurriculumComponent {
 
 
 
-  educationTxt = "Analista en sistemas - Instituto ORT terciario - Finalizado - Año 2023"
+  educationTxt = "Analista de Sistemas - Instituto ORT terciario - Finalizado - Año 2023"
   educacionTxt2 = "Ingeniero en informatica - UCEMA - En curso - Año 2024"
   experienceTxt = "Junior backend developer - Xenio - Freelance"
   languageTxt = "Ingles - Intermedio"

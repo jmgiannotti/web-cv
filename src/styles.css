@@ -2,6 +2,17 @@
 :root{
   color-scheme:only dark;
 }
+*, .mat-display-large, .mat-typography .mat-display-large, .mat-typography h1 {
+  font-family: "Nunito", sans-serif !important;
+  font-optical-sizing: auto;
+}
+h1{
+  font-weight: bold !important;
+}
+
+
+
+
 
 
 
