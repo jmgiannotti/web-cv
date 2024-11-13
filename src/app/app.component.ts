@@ -14,7 +14,7 @@ import {ParticlesBackgroundComponent} from "./particles-background/particles-bac
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'my-angular-app';
+  title = 'web-cv';
   chipsApp =
     [
       {
