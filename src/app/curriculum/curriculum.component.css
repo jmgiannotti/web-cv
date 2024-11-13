@@ -1,17 +1,16 @@
 .full-screen-container {
   display: flex;
   flex-direction: column;
-  height: 100vh; /* Ocupa toda la altura de la pantalla */
 }
 .card{
   max-width: 38%;
+  background-color: #1e2323;
 }
 .middle-third {
   margin-top: 2%  ;
-  flex: 1; /* Ocupa un tercio de la pantalla */
   display: flex;
   justify-content: center;
-  align-items: baseline;
+
 
 }
 
