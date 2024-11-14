@@ -5,7 +5,8 @@
   justify-content: center;
   position: relative;
   padding-top: 1em;
-  padding-bottom: 0.2em
+  padding-bottom: 0.2em;
+  text-align: center;
 }
 
 .title {
