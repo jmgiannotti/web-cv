@@ -21,7 +21,7 @@
               <mat-expansion-panel-header>
                 <mat-panel-title>Experiencia</mat-panel-title>
               </mat-expansion-panel-header>
-              <p>{{academicExperienceContent}}</p>
+              <p>{{experienceContent}}</p>
             </mat-expansion-panel>
 
             <!-- Sección 3: Tecnologías Aprendidas -->
@@ -58,7 +58,7 @@
                 <mat-chip-set>
                   @for (chip of chips; track chip.title) {
                     @if (chip.title.includes(proyect.stack[0]) || chip.title.includes(proyect.stack[1])) {
-                      <mat-chip>
+                      <mat-chip disabled>
                         <img
                           matChipAvatar
                           src="{{ chip.img }}"

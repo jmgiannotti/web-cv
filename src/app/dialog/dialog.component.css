@@ -44,7 +44,6 @@ h1{
   width: fit-content;
   block-size: auto;
   margin:1em;
-
 }
 
 @media (max-width: 600px) {
@@ -65,7 +64,6 @@ h1{
     margin-right: 0.2em;
     text-align: start;
     font-size: 0.8em
-
   }
   .dialog-image {
     width: 100%;

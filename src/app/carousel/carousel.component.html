@@ -1,8 +1,7 @@
-
-  <swiper-container slidesPerView="1" effect="coverflow" coverflowEffect-rotate="30" coverflowEffect-slideShadows="false" navigation="true" pagination-clickable="true">
-    @for (image of images; track $index) {
-    <swiper-slide lazy="true"><img [src]="image" class="image-car" alt="Imagen del carrusel" loading="lazy" /></swiper-slide>
-                                          }
-  </swiper-container>
-
-
+<swiper-container slidesPerView="1" effect="coverflow" coverflowEffect-rotate="30" coverflowEffect-slideShadows="false"
+                  navigation="true" pagination-clickable="true">
+  @for (image of images; track $index) {
+    <swiper-slide lazy="true"><img [src]="image" class="image-car" alt="Imagen del carrusel" loading="lazy"/>
+    </swiper-slide>
+  }
+</swiper-container>
