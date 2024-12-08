@@ -58,7 +58,7 @@
                 <mat-chip-set>
                   @for (chip of chips; track chip.title) {
                     @if (chip.title.includes(proyect.stack[0]) || chip.title.includes(proyect.stack[1])) {
-                      <mat-chip disabled>
+                      <mat-chip>
                         <img
                           matChipAvatar
                           src="{{ chip.img }}"
