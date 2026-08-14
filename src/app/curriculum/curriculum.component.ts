@@ -17,15 +17,21 @@ import {MatChip, MatChipAvatar, MatChipSet} from "@angular/material/chips";
 })
 export class CurriculumComponent {
 
-  profileTxt = "Con facilidad para trabajar en equipo, comunicación eficiente y disciplinado, practicando en cada proyecto que pude realizar con mis compañeros." +
-    " Siempre con la predisposición de superarme, aprender y generar ideas creativas para la resolución de los desafíos que se presenten."
+  profileTxt = "Estudiante de Ingeniería en Informática con pasión por el aprendizaje continuo y la resolución de desafíos técnicos." +
+    " Destaco por mi capacidad para trabajar en equipo, comunicación efectiva y disciplina, habilidades desarrolladas en proyectos colaborativos." +
+    " Poseo un nivel avanzado de inglés, adquirido mediante estudios formales."
 
-
-
-
-  educationTxt = "Analista de Sistemas - Instituto ORT terciario - Finalizado - Año 2023"
-  educacionTxt2 = "Ingeniero en informatica - UCEMA - En curso - Año 2024"
-  experienceTxt = "Junior backend developer - Xenio - Freelance"
-  languageTxt = "Ingles - Intermedio"
+  educationTxt = "Año 2021 - 2023 Finalizado - Terciario - Analista en Sistemas - Instituto Tecnológico de Educación Superior ORT"
+  educacionTxt2 = "Año 2024 - 2027 (Estimado) - Universitario - Ingeniería en Informática - UCEMA"
+  experienceTxt = "Junior Backend Developer | Xenio | 6 meses"
+  experienceDetails = [
+    "Desarrollo y mantenimiento de APIs REST utilizando Node.js y Express",
+    "Trabajo con bases de datos PostgreSQL y MongoDB para la persistencia de datos",
+    "Implementación de automatizaciones con Cypress y ejecución de pruebas manuales para el aseguramiento de la calidad",
+    "Colaboración en equipos ágiles (Scrum)",
+    "Uso de Git y Swagger, aplicando patrones de diseño básicos",
+    "Enfoque en la calidad del código, estabilidad y mantenibilidad del servicio"
+  ]
+  languageTxt = "Inglés - Avanzado"
   @Input() chips: any; // error al poner [] (array vacio)
 }

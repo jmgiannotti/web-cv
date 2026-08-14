@@ -2,7 +2,6 @@ import {ChangeDetectorRef, Component, Inject, PLATFORM_ID} from '@angular/core';
 import {NgxParticlesModule,NgParticlesService} from '@tsparticles/angular';
 import { MoveDirection, OutMode, ISourceOptions, Container} from "@tsparticles/engine";
 import {isPlatformBrowser} from "@angular/common";
-import {timestamp} from "rxjs";
 
 
 
