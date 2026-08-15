@@ -1,94 +1,296 @@
-/* Estilos principales del contenedor de tarjetas */
-.container-cards {
-  display: flex;
-  flex-direction: row;
-  align-content: space-evenly;
-  justify-content: space-evenly;
-  flex-wrap: wrap; /* Permite que las tarjetas se ajusten en múltiples filas si es necesario */
-  gap: 20px; /* Espacio entre las tarjetas */
-  margin: 0 auto;
-}
-mat-expansion-panel {
-  margin-bottom: 10px;
-  flex: 1; /* Hace que cada panel se expanda proporcionalmente */
+/* Main Grid Layout */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  align-items: start;
+  width: 100%;
 }
 
-
-/* Estilos generales para la tarjeta */
-.card {
-  max-width: 40%; /* Ocupa el 40% del ancho en pantallas grandes */
-  margin: 10px; /* Margen alrededor de cada tarjeta */
-}
-
-.card {
-  max-width: 40%;
+.about-col {
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Distribuye de manera uniforme */
-  padding: 1em;
-  height: 100%; /* Ocupa el 100% del contenedor padre */
+  gap: 1.5rem;
 }
 
-/* Estilos para pantallas medianas */
-@media screen and (max-width: 768px) {
-  .card {
-    max-width: 90%;
-    margin: 10px auto; /* Centra la tarjeta */
-  }
+/* Card Styling */
+.about-card {
+  padding: 1.75rem !important;
+  background: var(--bg-glass-card) !important;
+  border: 1px solid var(--border-subtle) !important;
+  border-radius: 20px !important;
+  box-shadow: var(--shadow-card) !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  height: 100%;
 }
 
-/* Estilos para pantallas pequeñas (móviles) */
-@media screen and (max-width: 480px) {
-  .card {
-    max-width: 100%; /* Toma el 100% del ancho del teléfono */
-    margin: 10px 0; /* Espacio vertical entre las tarjetas */
-  }
-
-  .container-cards {
-    flex-direction: column; /* Alinea las tarjetas en columna en pantallas pequeñas */
-  }
-
-  mat-card-title, mat-card-subtitle {
-    font-size: 1rem; /* Reduce el tamaño del texto para pantallas pequeñas */
-  }
-
-  .mat-accordion {
-    font-size: 0.9rem; /* Ajuste adicional para mejorar la legibilidad */
-  }
+.about-card:hover {
+  border-color: var(--border-accent) !important;
+  box-shadow: var(--shadow-card-hover) !important;
 }
 
-/* Estilos específicos para los paneles de expansión */
-mat-expansion-panel {
-  background-color: #294455;
-  margin-bottom: 10px;
-}
-
-mat-panel-title {
-  font-size: 1.2rem;
-}
-
-.middle-third {
-  margin-top: 2%;
-  flex: 1; /* Ocupa un tercio de la pantalla */
+/* Clean Header */
+.card-header-clean {
   display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.header-icon-box {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: rgba(56, 189, 248, 0.1);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  display: flex;
+  align-items: center;
   justify-content: center;
-  align-items: baseline;
+  color: var(--primary-cyan);
+  flex-shrink: 0;
 }
 
-/* Estilos para la tarjeta de proyectos */
-.card-p {
-  margin-top: 0.7em;
-  background: #294455;
-  transition: transform 0.3s, box-shadow 0.3s;
+.header-icon-box svg {
+  width: 20px;
+  height: 20px;
+}
+
+.header-text-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-heading {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.header-sub {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+/* Accordion Specifics */
+.panel-icon {
+  font-size: 1.2rem;
+  margin-right: 8px;
+}
+
+.panel-paragraph {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Projects List */
+.projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.project-item-card {
+  background: rgba(20, 30, 48, 0.55);
+  border: 1px solid var(--border-subtle);
+  border-radius: 18px;
+  padding: 0;
   cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
-.card-p:hover {
+.project-item-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 4px 8px rgba(100, 100, 100, 0.2);
+  background: rgba(25, 38, 62, 0.8);
+  border-color: rgba(56, 189, 248, 0.45);
+  box-shadow: 0 16px 32px -10px rgba(0, 242, 254, 0.2);
 }
 
-.card-p:active {
-  transform: translateY(-2px);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+/* Thumbnail Visual Banner */
+.project-card-thumb {
+  position: relative;
+  width: 100%;
+  height: 140px;
+  background: #090d16;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border-subtle);
 }
+
+.project-card-thumb.mobile-thumb {
+  height: 150px;
+  background: radial-gradient(circle at center, #1e293b 0%, #090d16 100%);
+}
+
+.thumb-bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), filter 0.3s ease;
+  filter: brightness(0.9);
+}
+
+.project-card-thumb.mobile-thumb .thumb-bg-image {
+  object-fit: contain;
+  padding: 6px;
+}
+
+.project-item-card:hover .thumb-bg-image {
+  transform: scale(1.05);
+  filter: brightness(1.05);
+}
+
+.thumb-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(9, 13, 22, 0.2) 0%, rgba(9, 13, 22, 0.85) 100%);
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 10px 14px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-item-card:hover .thumb-overlay {
+  opacity: 1;
+}
+
+.view-gallery-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--primary-cyan);
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(8px);
+  padding: 4px 10px;
+  border-radius: 9999px;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+}
+
+.view-gallery-btn svg {
+  width: 12px;
+  height: 12px;
+}
+
+.thumb-badge-top {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 2;
+}
+
+.project-pill-type {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(8px);
+  color: #38bdf8;
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+
+/* Card Body */
+.project-card-body {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.project-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.project-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+  transition: color 0.2s ease;
+}
+
+.project-item-card:hover .project-title {
+  color: var(--primary-cyan);
+}
+
+.project-view-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--primary-cyan);
+  background: rgba(56, 189, 248, 0.1);
+  padding: 3px 8px;
+  border-radius: 9999px;
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  transition: all 0.2s ease;
+}
+
+.project-item-card:hover .project-view-badge {
+  background: var(--primary-cyan);
+  color: #0b0f17;
+}
+
+.arrow-icon {
+  width: 12px;
+  height: 12px;
+  transition: transform 0.2s ease;
+}
+
+.project-item-card:hover .arrow-icon {
+  transform: translateX(2px);
+}
+
+.project-desc {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  line-height: 1.55;
+  margin: 0;
+}
+
+.project-card-footer {
+  margin-top: 4px;
+}
+
+.project-chips {
+  gap: 6px !important;
+}
+
+.project-tech-chip {
+  background: rgba(30, 41, 59, 0.7) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  font-size: 0.75rem !important;
+  padding: 2px 10px !important;
+  height: 28px !important;
+}
+
+.project-tech-chip img {
+  width: 16px !important;
+  height: 16px !important;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+}
+

@@ -19,7 +19,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
   styleUrl: './about.component.css'
 })
 export class AboutComponent {
-  @Input() chips: any;
+  @Input() chips: { title: string; img: string }[] = [];
 
   constructor(private dialog: MatDialog) { }
 
@@ -29,39 +29,74 @@ export class AboutComponent {
   personalInterestsContent: string = `En mi tiempo libre, juego voleibol de manera federada, lo que me ha ayudado a desarrollar habilidades de trabajo en equipo y disciplina. También disfruto armar legos y soy un apasionado del gaming, actividades que me permiten explorar la creatividad y el pensamiento estratégico.`;
 
 
-  proyects =
-    [
-      {
-        stack: ["VueJs", "Spring"],
-        description: "Busqueda y reseña de libros",
-        images: ['assets/images/LibreriaEspiral-cap1.png'],
-        title: "Libreria Espiral",
-        descriptionL: "Librería Espiral es una aplicación pensada para la búsqueda y reseña de libros, similar a la experiencia de CinePlus, pero centrada en literatura. Desarrollada en Vue.js y Spring, este proyecto me permitió aprender a fondo el patrón MVC en Spring, realizando solicitudes y procesando datos de manera asíncrona. Aunque la app aún está en desarrollo, ya cuenta con funcionalidades clave para explorar y descubrir libros organizados por categorías."
-      },
-      {
-        stack: ["VueJs", "NodeJs"],
-        description: "Muestra en el mapa las estaciones meteorologicas y las lista en un dashboard lateral",
-        images: ['assets/images/RespirAR-cap1.png', 'assets/images/RespirAR-cap2.png',  'assets/images/RespirAR-cap3.png'],
-        title: "RespirAR",
-        descriptionL: "Aplicación desarrollada para \"Ciudades del Futuro\", diseñada para visualizar estaciones meteorológicas en un mapa y listarlas en un panel lateral. El reto clave fue implementar el framework de IoT \"Fiware\", cumpliendo con un requisito exclusivo del cliente y adaptando el entorno de desarrollo a contenedores Docker."
-      },
-      {
-        stack: ["Kotlin", "Firebase"],
-        description: "App mobile que muestra peliculas, sus detalles y permite realizar comentarios",
-        images: ['assets/images/Cineplus-cap1.png', 'assets/images/Cineplus-cap2.png'],
-        title: "CinePlus",
-        descriptionL: "Aplicación móvil para ver detalles de películas y dejar comentarios, con integración de una API de películas y almacenamiento en Firebase. Este proyecto ayudó a consolidar habilidades en arquitectura de aplicaciones móviles y almacenamiento de datos, tanto del usuario como de contenido relevante, en Firebase."
+  proyects = [
+    {
+      title: "Cerro Catedral Bot",
+      type: "Telegram Bot & Automation",
+      stack: ["NodeJs", "Docker", "Puppeteer", "Telegram API"],
+      description: "Bot automatizado que monitorea en tiempo real pistas y medios del Cerro Catedral con generación dinámica de mapas.",
+      images: [
+        'assets/images/Cerrobot-mapa.png',
+        'assets/images/Cerrobot-telegram.png'
+      ],
+      isMobile: false,
+      urlMock: "https://github.com/jmgiannotti/cerro-bot",
+      githubUrl: "https://github.com/jmgiannotti/cerro-bot",
+      highlights: [
+        "Web scraping automatizado en tiempo real con Puppeteer y Node.js para telemetría de pistas y medios de elevación.",
+        "Generación programática de mapas visuales de pistas basados en el estado dinámico de la montaña.",
+        "Notificaciones push automáticas y comandos interactivos mediante Telegram Bot API.",
+        "Contenerización con Docker para despliegue y monitoreo continuo 24/7."
+      ],
+      descriptionL: "Bot de Telegram que monitorea en tiempo real el estado de pistas de esquí y medios de elevación del Cerro Catedral (Bariloche). Utiliza Puppeteer para extraer datos del sitio oficial, procesa la telemetría y genera un mapa visual interactivo cada vez que detecta cambios de estado o ante consultas de los usuarios por Telegram."
+    },
+    {
+      title: "RespirAR",
+      type: "Web Dashboard & IoT",
+      stack: ["VueJs", "NodeJs", "Docker"],
+      description: "Visualización de estaciones meteorológicas en mapa interactivo con telemetría en tiempo real.",
+      images: [
+        'assets/images/RespirAR-cap1.png',
+        'assets/images/RespirAR-cap2.png',
+        'assets/images/RespirAR-cap3.png'
+      ],
+      isMobile: false,
+      urlMock: "https://ciudadesdelfuturo.org/respirar",
+      githubUrl: "https://github.com/nicoabaez/RespirAR",
+      highlights: [
+        "Integración del framework europeo de IoT Fiware en contenedores Docker.",
+        "Mapeo geoespacial interactivo y panel lateral con telemetría en tiempo real.",
+        "Arquitectura frontend reactiva construida en Vue.js con backend en Node.js."
+      ],
+      descriptionL: "Aplicación desarrollada para \"Ciudades del Futuro\", diseñada para visualizar estaciones meteorológicas en un mapa interactivo y listarlas en un panel lateral en tiempo real. El reto clave fue implementar el framework de IoT \"Fiware\", cumpliendo con un requisito exclusivo del cliente y adaptando todo el entorno de desarrollo a microservicios en contenedores Docker."
+    },
+    {
+      title: "CinePlus",
+      type: "Mobile App Android",
+      stack: ["Kotlin", "Firebase"],
+      description: "App móvil nativa para exploración de películas, detalles de elenco y comentarios en vivo.",
+      images: [
+        'assets/images/Cineplus-cap1.png',
+        'assets/images/Cineplus-cap2.png'
+      ],
+      isMobile: true,
+      urlMock: "app://cineplus.android",
+      githubUrl: "https://github.com/nicoabaez/CinePlus-Proyecto",
+      highlights: [
+        "Desarrollo nativo en Kotlin con arquitectura Clean y componentes de Android Jetpack.",
+        "Consumo asíncrono de APIs REST de catálogo cinematográfico.",
+        "Autenticación y base de datos NoSQL en tiempo real con Firebase Firestore."
+      ],
+      descriptionL: "Aplicación móvil desarrollada en Kotlin para explorar películas en cartelera, ver detalles de elenco, trailers y dejar comentarios y reseñas en tiempo real. Cuenta con integración de API pública de películas y almacenamiento en la nube mediante Firebase para autenticación de usuarios y persistencia de interacciones."
+    }
+  ];
 
-
-      }]
-
-  openDialog(proyect: { stack: string[]; description: string; title: string }): void {
+  openDialog(proyect: any): void {
     this.dialog.open(DialogComponent, {
       data: proyect,
-      maxWidth: '140vw',
-      maxHeight: '140vh',
-      width: '80vw',
-
+      maxWidth: '1050px',
+      width: '92vw',
+      panelClass: 'custom-project-dialog-panel'
     });
   }
 

@@ -1,15 +1,359 @@
-/* You can add global styles to this file, and also import other style files */
-:root{
-  color-scheme:only dark;
-}
-*, .mat-display-large, .mat-typography .mat-display-large, .mat-typography h1 {
-  font-family: "Nunito", sans-serif !important;
-  font-optical-sizing: auto;
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Nunito:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  color-scheme: only dark;
+  --bg-dark: #090d16;
+  --bg-surface: rgba(15, 23, 42, 0.7);
+  --bg-surface-elevated: rgba(30, 41, 59, 0.75);
+  --bg-glass-card: rgba(17, 27, 46, 0.65);
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-accent: rgba(56, 189, 248, 0.25);
+  --border-accent-hover: rgba(56, 189, 248, 0.5);
+  
+  --primary-cyan: #00f2fe;
+  --primary-blue: #4facfe;
+  --accent-purple: #818cf8;
+  --accent-emerald: #10b981;
+  --accent-amber: #f59e0b;
+  
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  
+  --gradient-brand: linear-gradient(135deg, #00f2fe 0%, #4facfe 50%, #818cf8 100%);
+  --gradient-accent: linear-gradient(135deg, #38bdf8 0%, #6366f1 100%);
+  --gradient-card-border: linear-gradient(135deg, rgba(56, 189, 248, 0.4), rgba(129, 140, 248, 0.1), rgba(255, 255, 255, 0.05));
+  --gradient-badge: linear-gradient(135deg, rgba(56, 189, 248, 0.15), rgba(99, 102, 241, 0.15));
+  
+  --shadow-glow: 0 0 25px rgba(56, 189, 248, 0.18);
+  --shadow-card: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 1px 1px rgba(255, 255, 255, 0.05);
+  --shadow-card-hover: 0 20px 40px -15px rgba(0, 242, 254, 0.15), 0 0 1px 1px rgba(56, 189, 248, 0.4);
 }
 
-h1{
-  font-weight: bold !important;
+*, *::before, *::after {
+  box-sizing: border-box;
 }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+  font-family: 'Nunito', -apple-system, BlinkMacSystemFont, sans-serif;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #090d16;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(56, 189, 248, 0.25);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(56, 189, 248, 0.45);
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6, .font-heading {
+  font-family: 'Outfit', sans-serif !important;
+  letter-spacing: -0.02em;
+}
+
+/* Global Keyframe Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(56, 189, 248, 0.25);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(56, 189, 248, 0.5);
+  }
+}
+
+@keyframes pulseLive {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 8px rgba(16, 185, 129, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+  }
+}
+
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Prevent accidental ghost drag & text selection traps on interactive elements */
+button,
+a,
+.action-btn,
+.mat-mdc-tab,
+.mat-mdc-tab-labels,
+.mat-mdc-chip,
+.project-item-card,
+.nav-arrow-btn,
+.btn-close,
+.btn-icon,
+.tab-icon,
+.action-icon-btn,
+.lightbox-close-btn,
+.status-pill,
+.tech-pill,
+.thumb-item {
+  user-select: none !important;
+  -webkit-user-select: none !important;
+  -webkit-user-drag: none !important;
+  -webkit-touch-callout: none !important;
+}
+
+img, svg {
+  -webkit-user-drag: none !important;
+  user-select: none !important;
+  -webkit-user-select: none !important;
+}
+
+/* Angular Material Tabs Overrides - Pill Shapes with NO rectangular ghosts */
+.mat-mdc-tab-group {
+  max-width: 1200px;
+  margin: 0 auto !important;
+  font-family: 'Nunito', sans-serif !important;
+}
+
+.mat-mdc-tab-header {
+  border-bottom: 1px solid var(--border-subtle) !important;
+  margin-bottom: 2rem !important;
+  display: flex !important;
+  justify-content: center !important;
+}
+
+.mat-mdc-tab-header-pagination {
+  display: none !important;
+}
+
+.mat-mdc-tab-labels {
+  display: inline-flex !important;
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 4px;
+  border-radius: 9999px !important;
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-card);
+  overflow: hidden !important;
+}
+
+.mat-mdc-tab {
+  min-width: 160px !important;
+  height: 44px !important;
+  border-radius: 9999px !important;
+  color: var(--text-muted) !important;
+  font-family: 'Outfit', sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 0.95rem !important;
+  letter-spacing: 0.02em !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  opacity: 1 !important;
+  overflow: hidden !important;
+  position: relative !important;
+}
+
+/* Eliminate rectangular ghost ripple / hover box on Tabs */
+.mat-mdc-tab .mat-mdc-tab-ripple,
+.mat-mdc-tab .mdc-tab__ripple,
+.mat-mdc-tab .mdc-tab__ripple::before,
+.mat-mdc-tab .mdc-tab__ripple::after,
+.mat-mdc-tab .mat-focus-indicator,
+.mat-mdc-tab .mat-mdc-focus-indicator {
+  border-radius: 9999px !important;
+  overflow: hidden !important;
+}
+
+.mat-mdc-tab:hover {
+  color: var(--text-primary) !important;
+}
+
+.mat-mdc-tab.mdc-tab--active {
+  background: var(--gradient-brand) !important;
+  color: #0b0f17 !important;
+  font-weight: 700 !important;
+  box-shadow: 0 4px 15px rgba(0, 242, 254, 0.3) !important;
+}
+
+.mat-mdc-tab .mdc-tab-indicator {
+  display: none !important;
+}
+
+.mat-mdc-tab .mdc-tab__text-label {
+  color: inherit !important;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Angular Material Button & Circular Element Ghost Fixes */
+.mat-mdc-button,
+.mat-mdc-unelevated-button,
+.mat-mdc-raised-button,
+.mat-mdc-outlined-button,
+.mat-mdc-icon-button,
+.mat-mdc-fab,
+.mat-mdc-mini-fab {
+  overflow: hidden !important;
+}
+
+.mat-mdc-button-ripple,
+.mat-mdc-button-persistent-ripple,
+.mat-mdc-button-persistent-ripple::before,
+.mdc-button__ripple,
+.mdc-button__ripple::before,
+.mdc-button__ripple::after,
+.mat-focus-indicator,
+.mat-mdc-focus-indicator,
+.mat-ripple {
+  border-radius: inherit !important;
+  overflow: hidden !important;
+}
+
+/* Circular Buttons with 50% border-radius */
+.btn-close,
+.btn-close.mat-mdc-button,
+.btn-close .mat-mdc-button-ripple,
+.btn-close .mat-mdc-button-persistent-ripple,
+.btn-close .mat-mdc-button-persistent-ripple::before,
+.btn-close .mdc-button__ripple,
+.btn-close .mdc-button__ripple::before,
+.nav-arrow-btn,
+.lightbox-close-btn,
+.action-icon-btn {
+  border-radius: 50% !important;
+  overflow: hidden !important;
+}
+
+/* Angular Material Card Global Overrides */
+.mat-mdc-card {
+  background: var(--bg-glass-card) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border: 1px solid var(--border-subtle) !important;
+  border-radius: 20px !important;
+  color: var(--text-primary) !important;
+  box-shadow: var(--shadow-card) !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+/* Angular Material Chip Overrides */
+.mat-mdc-chip-set {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 8px !important;
+}
+
+.mat-mdc-chip {
+  background: rgba(30, 41, 59, 0.6) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  color: var(--text-secondary) !important;
+  border-radius: 12px !important;
+  font-size: 0.85rem !important;
+  font-weight: 500 !important;
+  transition: all 0.25s ease !important;
+  padding: 4px 12px !important;
+  overflow: hidden !important;
+}
+
+.mat-mdc-chip,
+.mat-mdc-chip .mdc-evolution-chip__ripple,
+.mat-mdc-chip .mdc-evolution-chip__ripple::before,
+.mat-mdc-chip .mat-mdc-chip-focus-overlay {
+  border-radius: 12px !important;
+  overflow: hidden !important;
+}
+
+.mat-mdc-chip:hover {
+  background: rgba(56, 189, 248, 0.15) !important;
+  border-color: rgba(56, 189, 248, 0.4) !important;
+  color: #fff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(56, 189, 248, 0.2);
+}
+
+.mat-mdc-chip img {
+  border-radius: 4px;
+}
+
+/* Material Expansion Panel Overrides */
+.mat-accordion .mat-expansion-panel {
+  background: rgba(20, 30, 48, 0.6) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border: 1px solid var(--border-subtle) !important;
+  border-radius: 14px !important;
+  margin-bottom: 12px !important;
+  color: var(--text-secondary) !important;
+  box-shadow: none !important;
+  transition: all 0.3s ease !important;
+}
+
+.mat-accordion .mat-expansion-panel:hover {
+  border-color: rgba(56, 189, 248, 0.3) !important;
+  background: rgba(25, 38, 60, 0.7) !important;
+}
+
+.mat-accordion .mat-expansion-panel.mat-expanded {
+  border-color: rgba(56, 189, 248, 0.4) !important;
+  background: rgba(25, 38, 60, 0.8) !important;
+  box-shadow: 0 8px 24px -6px rgba(0, 0, 0, 0.4) !important;
+}
+
+.mat-expansion-panel-header-title {
+  color: var(--text-primary) !important;
+  font-family: 'Outfit', sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 1.05rem !important;
+}
+
+.mat-expansion-panel-header-description, .mat-expansion-indicator::after {
+  color: var(--primary-cyan) !important;
+}
+
+.mat-expansion-panel-body {
+  color: var(--text-secondary) !important;
+  font-size: 0.95rem !important;
+  line-height: 1.65 !important;
+}
+
 
 
 

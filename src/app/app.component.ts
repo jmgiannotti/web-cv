@@ -1,56 +1,70 @@
 import { Component } from '@angular/core';
-import {MatTab, MatTabGroup} from "@angular/material/tabs";
-import {CurriculumComponent} from "./curriculum/curriculum.component";
-import {AboutComponent} from "./about/about.component";
-import {ParticlesBackgroundComponent} from "./particles-background/particles-background.component";
-
+import { MatTabsModule } from "@angular/material/tabs";
+import { CurriculumComponent } from "./curriculum/curriculum.component";
+import { AboutComponent } from "./about/about.component";
+import { ParticlesBackgroundComponent } from "./particles-background/particles-background.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [MatTab, MatTabGroup, CurriculumComponent, AboutComponent, ParticlesBackgroundComponent],
+  imports: [MatTabsModule, CurriculumComponent, AboutComponent, ParticlesBackgroundComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
   title = 'web-cv';
-  chipsApp =
-    [
-      {
-        title: 'Angular',
-        img: 'https://img.icons8.com/?size=100&id=j9DnICNnlhGk&format=png&color=000000'
-      },
-      {
-        title: 'NodeJs',
-        img: 'https://img.icons8.com/?size=100&id=hsPbhkOH4FMe&format=png&color=000000'
-      },
-      {
-        title: 'Spring',
-        img: 'https://img.icons8.com/?size=100&id=90519&format=png&color=000000'
-      },
-      {
-        title: 'VueJs',
-        img: 'https://img.icons8.com/?size=100&id=BUnExfsRs3CW&format=png&color=000000'
-      },
-      {
-        title: 'MongoDB',
-        img: 'https://img.icons8.com/?size=100&id=74402&format=png&color=000000'
-      },
-      {
-        title: 'MySQL',
-        img: 'https://img.icons8.com/?size=100&id=rgPSE6nAB766&format=png&color=000000'
-      },
-      {
-        title: 'Docker',
-        img: 'https://img.icons8.com/?size=100&id=cdYUlRaag9G9&format=png&color=000000'
-      },
-      {
-        title: 'Kotlin',
-        img: 'https://img.icons8.com/?size=100&id=ZoxjA0jZDdFZ&format=png&color=000000'
-      },
-      {
-        title: 'Firebase',
-        img: 'https://img.icons8.com/?size=100&id=62452&format=png&color=000000'
-      }
-    ]
+  
+  contactInfo = {
+    name: 'Juan Martín Giannotti Calens',
+    role: 'Desarrollador Fullstack & Estudiante de Ing. en Informática',
+    email: 'juanmartingiannotti@gmail.com',
+    phone: '+(54) 911 59481529',
+    phoneClean: '5491159481529',
+    location: 'CABA, Argentina',
+    github: 'https://github.com/jmgiannotti',
+    githubUser: '@jmgiannotti',
+  };
+
+  chipsApp = [
+    {
+      title: 'Angular',
+      img: 'https://img.icons8.com/?size=100&id=j9DnICNnlhGk&format=png&color=000000'
+    },
+    {
+      title: 'NodeJs',
+      img: 'https://img.icons8.com/?size=100&id=hsPbhkOH4FMe&format=png&color=000000'
+    },
+    {
+      title: 'Spring Boot',
+      img: 'https://img.icons8.com/?size=100&id=90519&format=png&color=000000'
+    },
+    {
+      title: 'VueJs',
+      img: 'https://img.icons8.com/?size=100&id=BUnExfsRs3CW&format=png&color=000000'
+    },
+    {
+      title: 'PostgreSQL',
+      img: 'https://img.icons8.com/?size=100&id=38561&format=png&color=000000'
+    },
+    {
+      title: 'MongoDB',
+      img: 'https://img.icons8.com/?size=100&id=74402&format=png&color=000000'
+    },
+    {
+      title: 'MySQL',
+      img: 'https://img.icons8.com/?size=100&id=rgPSE6nAB766&format=png&color=000000'
+    },
+    {
+      title: 'Docker',
+      img: 'https://img.icons8.com/?size=100&id=cdYUlRaag9G9&format=png&color=000000'
+    },
+    {
+      title: 'Kotlin',
+      img: 'https://img.icons8.com/?size=100&id=ZoxjA0jZDdFZ&format=png&color=000000'
+    },
+    {
+      title: 'Firebase',
+      img: 'https://img.icons8.com/?size=100&id=62452&format=png&color=000000'
+    }
+  ];
 }

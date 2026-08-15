@@ -1,9 +1,146 @@
-@if (isBrowser) {
-  <swiper-container slidesPerView="1" effect="coverflow" coverflowEffect-rotate="30" coverflowEffect-slideShadows="false"
-                    navigation="true" pagination-clickable="true">
-    @for (image of images; track $index) {
-      <swiper-slide lazy="true"><img [src]="image" class="image-car" alt="Imagen del carrusel" loading="lazy"/>
-      </swiper-slide>
+@if (images && images.length > 0) {
+  <div class="gallery-container" [class.is-mobile-layout]="isMobile">
+
+    <!-- Mobile Device Frame -->
+    @if (isMobile) {
+      <div class="phone-mockup-frame">
+        <!-- Phone Speaker & Notch -->
+        <div class="phone-notch">
+          <div class="phone-speaker"></div>
+          <div class="phone-camera"></div>
+        </div>
+
+        <!-- Phone Viewport Screen -->
+        <div class="phone-screen" (click)="toggleZoom()" title="Click para ampliar imagen">
+          @for (img of images; track $index) {
+            <div class="slide-wrapper" [class.active]="$index === currentIndex">
+              <img [src]="img" [alt]="title + ' captura ' + ($index + 1)" class="mockup-img phone-img" />
+            </div>
+          }
+
+          <!-- Floating Zoom Hint Button -->
+          <div class="zoom-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              <line x1="11" y1="8" x2="11" y2="14"></line>
+              <line x1="8" y1="11" x2="14" y2="11"></line>
+            </svg>
+            <span>Ampliar</span>
+          </div>
+        </div>
+
+        <!-- Phone Home Bar -->
+        <div class="phone-home-bar"></div>
+      </div>
     }
-  </swiper-container>
+
+    <!-- Desktop Browser Frame -->
+    @if (!isMobile) {
+      <div class="browser-mockup-frame">
+        <!-- Browser Top Bar -->
+        <div class="browser-top-bar">
+          <div class="window-dots">
+            <span class="dot dot-red"></span>
+            <span class="dot dot-yellow"></span>
+            <span class="dot dot-green"></span>
+          </div>
+
+          <div class="browser-address-bar">
+            <svg class="lock-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+            </svg>
+            <span class="address-text">{{ urlMock || 'https://' + (title | lowercase) + '.app' }}</span>
+          </div>
+
+          <div class="browser-actions">
+            <button class="action-icon-btn" (click)="toggleZoom()" title="Ampliar imagen">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <polyline points="9 21 3 21 3 15"></polyline>
+                <line x1="21" y1="3" x2="14" y2="10"></line>
+                <line x1="3" y1="21" x2="10" y2="14"></line>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Browser Viewport Screen -->
+        <div class="browser-screen" (click)="toggleZoom()" title="Click para ampliar imagen">
+          @for (img of images; track $index) {
+            <div class="slide-wrapper" [class.active]="$index === currentIndex">
+              <img [src]="img" [alt]="title + ' captura ' + ($index + 1)" class="mockup-img browser-img" />
+            </div>
+          }
+        </div>
+      </div>
+    }
+
+    <!-- Navigation Controls (Only if multiple images) -->
+    @if (images.length > 1) {
+      <div class="gallery-controls-bar">
+        <!-- Prev Button -->
+        <button class="nav-arrow-btn" (click)="prev()" title="Anterior imagen">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+
+        <!-- Slide Counter Pill -->
+        <div class="counter-badge">
+          <span>{{ currentIndex + 1 }}</span>
+          <span class="counter-sep">/</span>
+          <span>{{ images.length }}</span>
+        </div>
+
+        <!-- Next Button -->
+        <button class="nav-arrow-btn" (click)="next()" title="Siguiente imagen">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Thumbnails Strip -->
+      <div class="thumbnails-strip">
+        @for (img of images; track $index) {
+          <div
+            class="thumb-item"
+            [class.active]="$index === currentIndex"
+            [class.thumb-mobile]="isMobile"
+            (click)="setSlide($index)"
+            title="Ver captura {{ $index + 1 }}"
+          >
+            <img [src]="img" [alt]="'Miniatura ' + ($index + 1)" />
+          </div>
+        }
+      </div>
+    }
+
+    <!-- Fullscreen Zoom Modal (Lightbox) -->
+    @if (isZoomed) {
+      <div class="lightbox-backdrop" (click)="toggleZoom()">
+        <div class="lightbox-dialog" (click)="$event.stopPropagation()">
+          <button class="lightbox-close-btn" (click)="toggleZoom()" title="Cerrar vista completa">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+          
+          <img [src]="images[currentIndex]" [alt]="title" class="lightbox-image" />
+          
+          @if (images.length > 1) {
+            <div class="lightbox-footer">
+              <button class="nav-arrow-btn" (click)="prev()">‹</button>
+              <span class="lightbox-counter">{{ currentIndex + 1 }} / {{ images.length }}</span>
+              <button class="nav-arrow-btn" (click)="next()">›</button>
+            </div>
+          }
+        </div>
+      </div>
+    }
+
+  </div>
 }

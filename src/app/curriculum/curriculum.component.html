@@ -1,52 +1,176 @@
-<div class="full-screen-container">
-  <div class="middle-third">
+<div class="cv-grid animate-fade-in">
+  <!-- Left Column: Profile, Education, Languages -->
+  <div class="cv-col-sidebar">
+    <!-- Profile Card -->
+    <mat-card class="cv-card profile-card">
+      <div class="card-header-clean">
+        <div class="header-icon-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </div>
+        <h2 class="card-heading">Perfil Profesional</h2>
+      </div>
+      <p class="profile-text">{{ profileTxt }}</p>
+    </mat-card>
 
-    <mat-card class="card">
-      <mat-card-header>
-        <div mat-card-avatar class="example-header-image"></div>
-        <mat-card-title>
-          Juan Martin Giannotti Calens
-        </mat-card-title>
-        <mat-card-subtitle>
-          <img class="github-logo" alt="" src="https://cdn-icons-png.flaticon.com/256/25/25231.png"/>
-          <a href="https://github.com/jmgiannotti">&#64;jmgiannotti </a>
-        </mat-card-subtitle>
-      </mat-card-header>
+    <!-- Education Card (Timeline) -->
+    <mat-card class="cv-card">
+      <div class="card-header-clean">
+        <div class="header-icon-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+            <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+          </svg>
+        </div>
+        <h2 class="card-heading">Educación</h2>
+      </div>
 
-      <mat-card-content style="margin-top: 1.5%">
-        <mat-card-subtitle><h6>Perfil</h6></mat-card-subtitle>
-        {{ profileTxt }}
-        <mat-card-subtitle class="subtitles-cv" ><h6>Educacion</h6></mat-card-subtitle>
-        <ul>
-          <li>{{educationTxt}}</li>
-          <br>
-          <li>{{educacionTxt2}}</li>
-        </ul>
+      <div class="timeline">
+        @for (edu of educationList; track edu.degree) {
+          <div class="timeline-item" [class.current]="edu.isCurrent">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <div class="timeline-badge-row">
+                <span class="edu-type">{{ edu.type }}</span>
+                <span class="edu-status-badge" [class.badge-current]="edu.isCurrent">{{ edu.status }}</span>
+              </div>
+              <h3 class="edu-degree">{{ edu.degree }}</h3>
+              <p class="edu-inst">{{ edu.institution }}</p>
+              <span class="edu-period">{{ edu.period }}</span>
+            </div>
+          </div>
+        }
+      </div>
+    </mat-card>
 
-        <mat-card-subtitle class="subtitles-cv" ><h6>Idioma</h6></mat-card-subtitle>
-        {{languageTxt}}
-        <mat-card-subtitle class="subtitles-cv" ><h6>Experiencia Profesional</h6></mat-card-subtitle>
-        {{experienceTxt}}
-        <ul>
-          @for (detail of experienceDetails; track detail) {
-            <li>{{ detail }}</li>
+    <!-- Languages Card -->
+    <mat-card class="cv-card">
+      <div class="card-header-clean">
+        <div class="header-icon-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="2" y1="12" x2="22" y2="12"></line>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+          </svg>
+        </div>
+        <h2 class="card-heading">Idiomas</h2>
+      </div>
+
+      <div class="languages-list">
+        @for (lang of languages; track lang.name) {
+          <div class="lang-row">
+            <div class="lang-info">
+              <span class="lang-name">{{ lang.name }}</span>
+              <span class="lang-detail">{{ lang.detail }}</span>
+            </div>
+            <span class="lang-level-badge">{{ lang.level }}</span>
+          </div>
+        }
+      </div>
+    </mat-card>
+  </div>
+
+  <!-- Right Column: Professional Experience, Technical Skills -->
+  <div class="cv-col-main">
+    <!-- Professional Experience Card -->
+    <mat-card class="cv-card exp-card">
+      <div class="card-header-clean">
+        <div class="header-icon-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+          </svg>
+        </div>
+        <div class="header-text-group">
+          <h2 class="card-heading">Experiencia Profesional</h2>
+          <span class="header-sub">Trayectoria y desarrollo de software</span>
+        </div>
+      </div>
+
+      <div class="job-container">
+        <div class="job-header">
+          <div>
+            <h3 class="job-title">{{ experience.role }}</h3>
+            <div class="job-meta">
+              <span class="job-company">{{ experience.company }}</span>
+              <span class="meta-separator">•</span>
+              <span class="job-type-pill">{{ experience.type }}</span>
+              <span class="meta-separator">•</span>
+              <span class="job-period">{{ experience.period }}</span>
+              <span class="job-duration-tag">({{ experience.duration }})</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tech Stack Used -->
+        <div class="job-stack">
+          @for (tech of experience.stack; track tech) {
+            <span class="stack-tag">{{ tech }}</span>
+          }
+        </div>
+
+        <!-- Bullets -->
+        <ul class="job-bullets">
+          @for (detail of experience.details; track detail) {
+            <li>
+              <svg class="bullet-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <span>{{ detail }}</span>
+            </li>
           }
         </ul>
-        <mat-card-subtitle class="subtitles-cv" ><h6>Aptitudes</h6></mat-card-subtitle>
-        <mat-chip-set>
-          @for (chip of chips; track chip) {
-            <mat-chip>
+      </div>
+    </mat-card>
+
+    <!-- Technical Skills Card -->
+    <mat-card class="cv-card skills-card">
+      <div class="card-header-clean">
+        <div class="header-icon-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="16 18 22 12 16 6"></polyline>
+            <polyline points="8 6 2 12 8 18"></polyline>
+          </svg>
+        </div>
+        <div class="header-text-group">
+          <h2 class="card-heading">Aptitudes Técnicas</h2>
+          <span class="header-sub">Stack tecnológico y herramientas</span>
+        </div>
+      </div>
+
+      <!-- Main Visual Skill Chips with Logos -->
+      <div class="chips-featured-section">
+        <span class="skills-category-label">Tecnologías Principales</span>
+        <mat-chip-set class="tech-chips-grid">
+          @for (chip of chips; track chip.title) {
+            <mat-chip class="custom-tech-chip">
               <img
                 matChipAvatar
-                src="{{chip.img}}"
-                alt="F"
+                [src]="chip.img"
+                [alt]="chip.title"
+                class="chip-avatar-img"
               />
-              {{ chip.title }}
+              <span class="chip-title-text">{{ chip.title }}</span>
             </mat-chip>
           }
         </mat-chip-set>
-      </mat-card-content>
+      </div>
 
+      <!-- Categorized Skills breakdown -->
+      <div class="skills-categories-grid">
+        @for (cat of skillCategories; track cat.category) {
+          <div class="skill-category-box">
+            <h4 class="category-name">{{ cat.category }}</h4>
+            <div class="category-tags">
+              @for (skill of cat.skills; track skill) {
+                <span class="category-tag">{{ skill }}</span>
+              }
+            </div>
+          </div>
+        }
+      </div>
     </mat-card>
   </div>
 </div>
