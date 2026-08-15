@@ -1,59 +1,46 @@
-# Juan Giannotti - Portfolio Website
+# Juan Giannotti - Portfolio & Digital CV
 
-Welcome to my portfolio website, built with **Angular 18**. This project highlights my skills, experience, and passion for software development. It serves as a digital CV and showcases the projects I’ve worked on during my journey as a **Software Developer** and **Informatics Engineering student**.
+Welcome to my portfolio website, built with **Angular 18** and **Modern Glassmorphism UI**. This project highlights my skills, professional experience, and featured projects as a **Fullstack Developer** and **Informatics Engineering student**.
 
-![image](https://github.com/user-attachments/assets/a26cc6e5-e9f0-4702-a85a-7edadf18157f)
+🔗 **Live Website:** [juangiannotti.vercel.app](https://juangiannotti.vercel.app/)
+
+---
 
 ## 🌟 About Me
 
-I’m an **Informatics Engineering student** passionate about continuous learning and tackling challenges. I excel in teamwork, effective communication, and a disciplined approach—qualities honed through collaborative projects with peers.
-
-In my free time, I enjoy **competitive volleyball**, **gaming**, and **reading**. I also have an **intermediate level of English**, developed through years of studying in an English institute.
-
+Estudiante de **Ingeniería en Informática** en **UCEMA** y **Analista en Sistemas** graduado en **ORT**. Apasionado por la arquitectura de software, el desarrollo backend y frontend, y la automatización de procesos.
 
 ---
 
-## 🛠️ Skills
+## 🛠️ Stack & Technologies
 
-### Programming Languages
-- **Java**
-- **JavaScript**
-- **Golang**
-
-### Frameworks & Tools
-- **Node.js**, **Vue.js**, **Angular**, **Spring Boot**
-- **MySQL**, **MongoDB**
-- **Software Architecture** and **Design Patterns**
-
-### Methodologies
-- **Agile Development** (e.g., Scrum)
+* **Frontend:** Angular 18, TypeScript, Vue.js, HTML5, Modern CSS / Design Systems
+* **Backend:** Node.js, Express, Spring Boot, Java, RESTful APIs
+* **Databases & DevOps:** PostgreSQL, MongoDB, MySQL, Docker, Firebase
+* **Automation & Testing:** Puppeteer, Cypress, Git, Swagger
 
 ---
 
-## 🎓 Education
+## 🚀 Featured Projects
 
-- **2021–2023**: Tertiary Degree in **Systems Analysis** - Instituto Tecnológico de Educación Superior ORT  
-- **2024 (Ongoing)**: University Degree in **Informatics Engineering** - UCEMA
+* 🏔️ **[Cerro Catedral Bot](https://github.com/jmgiannotti/cerro-bot):** Bot de Telegram con web scraping automatizado en tiempo real (Puppeteer & Docker) y generación dinámica de mapas de pistas y medios de elevación.
+* ☁️ **[RespirAR](https://github.com/nicoabaez/RespirAR):** Dashboard web & IoT para monitoreo y telemetría de estaciones meteorológicas con el framework Fiware y Vue.js.
+* 🎬 **[CinePlus](https://github.com/nicoabaez/CinePlus-Proyecto):** Aplicación móvil nativa en Kotlin con arquitectura Clean y persistencia en tiempo real con Firebase Firestore.
 
 ---
 
 ## 💼 Professional Experience
 
-- **Junior Backend Node.js Developer** - Xenio  
+* **Junior Backend Developer** @ **Xenio** *(Contractor • 01/2024 – 06/2024)*
+  * Desarrollo y mantenimiento de APIs REST con Node.js, Express y bases de datos relacionales/NoSQL (PostgreSQL, MongoDB).
+  * Automatización de pruebas con Cypress, testing manual y trabajo en equipos ágiles (Scrum).
 
 ---
 
-## 🌐 About This Website
+## 🎓 Education
 
-This website was developed to:
-- Showcase my **skills and experience** in web development.
-- Highlight the **projects** I’ve worked on, both individually and in teams.
-- Serve as a **professional digital CV** for potential employers and collaborators.
-
-### Features
-- Built with **Angular 18** using **standalone components**.
-- Implemented with **Server-Side Rendering (SSR)** and **Static Site Generation (SSG)** for optimal performance.
-- Designed for **visual clarity and usability**, including dynamic animations and responsive layouts.
+* **Ingeniería en Informática** - Universidad del CEMA (UCEMA) *(2024 – 2027 Estimado)*
+* **Analista en Sistemas** - Instituto Tecnológico Superior ORT *(2021 – 2023)*
 
 ---
 
