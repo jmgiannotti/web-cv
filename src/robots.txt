@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://juangiannotti.vercel.app/sitemap.xml

@@ -58,7 +58,7 @@
           <div class="project-item-card" (click)="openDialog(proyect)">
             <!-- Thumbnail Visual Banner -->
             <div class="project-card-thumb" [class.mobile-thumb]="proyect.isMobile">
-              <img [src]="proyect.images[0]" [alt]="proyect.title" class="thumb-bg-image" />
+              <img [src]="proyect.images[0]" [alt]="proyect.title" loading="lazy" decoding="async" class="thumb-bg-image" />
               <div class="thumb-overlay">
                 <span class="view-gallery-btn">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">

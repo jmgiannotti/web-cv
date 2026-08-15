@@ -164,8 +164,8 @@ export class TranslationService {
           stack: ["NodeJs", "Docker", "Puppeteer", "Telegram API"],
           description: "Bot automatizado que monitorea en tiempo real pistas y medios del Cerro Catedral con generación dinámica de mapas.",
           images: [
-            'assets/images/Cerrobot-mapa.png',
-            'assets/images/Cerrobot-telegram.png'
+            'assets/images/Cerrobot-mapa.jpg',
+            'assets/images/Cerrobot-telegram.jpg'
           ],
           isMobile: false,
           urlMock: "https://github.com/jmgiannotti/cerro-bot",
@@ -184,9 +184,9 @@ export class TranslationService {
           stack: ["VueJs", "NodeJs", "Docker"],
           description: "Visualización de estaciones meteorológicas en mapa interactivo con telemetría en tiempo real.",
           images: [
-            'assets/images/RespirAR-cap1.png',
-            'assets/images/RespirAR-cap2.png',
-            'assets/images/RespirAR-cap3.png'
+            'assets/images/RespirAR-cap1.jpg',
+            'assets/images/RespirAR-cap2.jpg',
+            'assets/images/RespirAR-cap3.jpg'
           ],
           isMobile: false,
           urlMock: "https://ciudadesdelfuturo.org/respirar",
@@ -204,8 +204,8 @@ export class TranslationService {
           stack: ["Kotlin", "Firebase"],
           description: "App móvil nativa para exploración de películas, detalles de elenco y comentarios en vivo.",
           images: [
-            'assets/images/Cineplus-cap1.png',
-            'assets/images/Cineplus-cap2.png'
+            'assets/images/Cineplus-cap1.jpg',
+            'assets/images/Cineplus-cap2.jpg'
           ],
           isMobile: true,
           urlMock: "app://cineplus.android",
@@ -347,8 +347,8 @@ export class TranslationService {
           stack: ["NodeJs", "Docker", "Puppeteer", "Telegram API"],
           description: "Automated bot that monitors ski slopes and lifts at Cerro Catedral in real time with dynamic map generation.",
           images: [
-            'assets/images/Cerrobot-mapa.png',
-            'assets/images/Cerrobot-telegram.png'
+            'assets/images/Cerrobot-mapa.jpg',
+            'assets/images/Cerrobot-telegram.jpg'
           ],
           isMobile: false,
           urlMock: "https://github.com/jmgiannotti/cerro-bot",
@@ -367,9 +367,9 @@ export class TranslationService {
           stack: ["VueJs", "NodeJs", "Docker"],
           description: "Meteorological station monitoring dashboard on an interactive map with real-time telemetry.",
           images: [
-            'assets/images/RespirAR-cap1.png',
-            'assets/images/RespirAR-cap2.png',
-            'assets/images/RespirAR-cap3.png'
+            'assets/images/RespirAR-cap1.jpg',
+            'assets/images/RespirAR-cap2.jpg',
+            'assets/images/RespirAR-cap3.jpg'
           ],
           isMobile: false,
           urlMock: "https://ciudadesdelfuturo.org/respirar",
@@ -387,8 +387,8 @@ export class TranslationService {
           stack: ["Kotlin", "Firebase"],
           description: "Native mobile app for movie browsing, cast exploration, and real-time community reviews.",
           images: [
-            'assets/images/Cineplus-cap1.png',
-            'assets/images/Cineplus-cap2.png'
+            'assets/images/Cineplus-cap1.jpg',
+            'assets/images/Cineplus-cap2.jpg'
           ],
           isMobile: true,
           urlMock: "app://cineplus.android",

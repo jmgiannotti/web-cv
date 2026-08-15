@@ -14,7 +14,7 @@
         <div class="phone-screen" (click)="toggleZoom()" title="Click para ampliar imagen">
           @for (img of images; track $index) {
             <div class="slide-wrapper" [class.active]="$index === currentIndex">
-              <img [src]="img" [alt]="title + ' captura ' + ($index + 1)" class="mockup-img phone-img" />
+              <img [src]="img" [alt]="title + ' captura ' + ($index + 1)" loading="lazy" decoding="async" class="mockup-img phone-img" />
             </div>
           }
 
@@ -70,7 +70,7 @@
         <div class="browser-screen" (click)="toggleZoom()" title="Click para ampliar imagen">
           @for (img of images; track $index) {
             <div class="slide-wrapper" [class.active]="$index === currentIndex">
-              <img [src]="img" [alt]="title + ' captura ' + ($index + 1)" class="mockup-img browser-img" />
+              <img [src]="img" [alt]="title + ' captura ' + ($index + 1)" loading="lazy" decoding="async" class="mockup-img browser-img" />
             </div>
           }
         </div>
@@ -112,7 +112,7 @@
             (click)="setSlide($index)"
             title="Ver captura {{ $index + 1 }}"
           >
-            <img [src]="img" [alt]="'Miniatura ' + ($index + 1)" />
+            <img [src]="img" [alt]="'Miniatura ' + ($index + 1)" loading="lazy" decoding="async" />
           </div>
         }
       </div>
