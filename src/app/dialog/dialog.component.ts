@@ -1,4 +1,4 @@
-import {Component, Inject} from '@angular/core';
+import { Component, Inject, inject } from '@angular/core';
 import {
   MAT_DIALOG_DATA,
   MatDialogActions,
@@ -6,8 +6,9 @@ import {
   MatDialogContent,
   MatDialogTitle
 } from "@angular/material/dialog";
-import {MatButton} from "@angular/material/button";
-import {CarouselComponent} from "../carousel/carousel.component";
+import { MatButton } from "@angular/material/button";
+import { CarouselComponent } from "../carousel/carousel.component";
+import { TranslationService } from "../services/translation.service";
 
 @Component({
   selector: 'app-dialog',
@@ -24,5 +25,6 @@ import {CarouselComponent} from "../carousel/carousel.component";
   styleUrl: './dialog.component.css'
 })
 export class DialogComponent {
+  ts = inject(TranslationService);
   constructor(@Inject(MAT_DIALOG_DATA) public data: any) { }
 }

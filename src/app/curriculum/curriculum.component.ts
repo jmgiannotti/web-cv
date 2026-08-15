@@ -1,6 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, inject } from '@angular/core';
 import { MatCardModule } from "@angular/material/card";
 import { MatChip, MatChipAvatar, MatChipSet } from "@angular/material/chips";
+import { TranslationService } from "../services/translation.service";
 
 
 @Component({
@@ -16,6 +17,8 @@ import { MatChip, MatChipAvatar, MatChipSet } from "@angular/material/chips";
   styleUrl: './curriculum.component.css'
 })
 export class CurriculumComponent {
+  ts = inject(TranslationService);
+  
   profileTxt = `Estudiante de Ingeniería en Informática con pasión por el aprendizaje continuo y la resolución de desafíos técnicos. Destaco por mi capacidad para trabajar en equipo, comunicación efectiva y disciplina, habilidades desarrolladas en proyectos colaborativos. Poseo un nivel avanzado de inglés, adquirido mediante estudios formales.`;
 
   educationList = [
@@ -78,5 +81,5 @@ export class CurriculumComponent {
     { name: 'Español', level: 'Nativo', detail: 'Idioma materno' }
   ];
 
-  @Input() chips: { title: string; img: string }[] = [];
+  @Input() chips: any[] = [];
 }

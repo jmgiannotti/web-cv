@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { MatTabsModule } from "@angular/material/tabs";
 import { CurriculumComponent } from "./curriculum/curriculum.component";
 import { AboutComponent } from "./about/about.component";
 import { ParticlesBackgroundComponent } from "./particles-background/particles-background.component";
+import { TranslationService } from "./services/translation.service";
 
 @Component({
   selector: 'app-root',
@@ -13,6 +14,7 @@ import { ParticlesBackgroundComponent } from "./particles-background/particles-b
 })
 export class AppComponent {
   title = 'web-cv';
+  ts = inject(TranslationService);
   
   contactInfo = {
     name: 'Juan Martín Giannotti Calens',

@@ -10,55 +10,28 @@
           </svg>
         </div>
         <div class="header-text-group">
-          <h2 class="card-heading">Sobre mí</h2>
-          <span class="header-sub">Trayectoria personal, metas y visión</span>
+          <h2 class="card-heading">{{ ts.t.about.accordionTitle }}</h2>
+          <span class="header-sub">{{ ts.t.about.accordionSub }}</span>
         </div>
       </div>
 
       <mat-accordion multi="true">
-        <!-- Sección 1: Educación -->
-        <mat-expansion-panel [expanded]="true">
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              <span class="panel-icon">🎓</span>
-              <span>Educación y Formación</span>
-            </mat-panel-title>
-          </mat-expansion-panel-header>
-          <p class="panel-paragraph">{{ educationContent }}</p>
-        </mat-expansion-panel>
-
-        <!-- Sección 2: Experiencia Académica -->
-        <mat-expansion-panel [expanded]="true">
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              <span class="panel-icon">💼</span>
-              <span>Experiencia en Proyectos</span>
-            </mat-panel-title>
-          </mat-expansion-panel-header>
-          <p class="panel-paragraph">{{ experienceContent }}</p>
-        </mat-expansion-panel>
-
-        <!-- Sección 3: Tecnologías Aprendidas -->
-        <mat-expansion-panel>
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              <span class="panel-icon">⚡</span>
-              <span>Evolución Tecnológica</span>
-            </mat-panel-title>
-          </mat-expansion-panel-header>
-          <p class="panel-paragraph">{{ learnedTechnologiesContent }}</p>
-        </mat-expansion-panel>
-
-        <!-- Sección 4: Intereses Personales -->
-        <mat-expansion-panel>
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              <span class="panel-icon">🏐</span>
-              <span>Intereses & Actividades</span>
-            </mat-panel-title>
-          </mat-expansion-panel-header>
-          <p class="panel-paragraph">{{ personalInterestsContent }}</p>
-        </mat-expansion-panel>
+        @for (panel of ts.t.about.panels; track panel.title) {
+          <mat-expansion-panel [expanded]="$index < 2">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <span class="panel-icon">
+                  @if (panel.icon === 'user') { 👨‍💻 }
+                  @else if (panel.icon === 'briefcase') { 💼 }
+                  @else if (panel.icon === 'target') { 🎯 }
+                  @else { 🏐 }
+                </span>
+                <span>{{ panel.title }}</span>
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <p class="panel-paragraph">{{ panel.content }}</p>
+          </mat-expansion-panel>
+        }
       </mat-accordion>
     </mat-card>
   </div>
@@ -75,13 +48,13 @@
           </svg>
         </div>
         <div class="header-text-group">
-          <h2 class="card-heading">Proyectos Destacados</h2>
-          <span class="header-sub">Hacé click en cada proyecto para ver capturas y detalles</span>
+          <h2 class="card-heading">{{ ts.t.about.projectsTitle }}</h2>
+          <span class="header-sub">{{ ts.t.about.projectsSub }}</span>
         </div>
       </div>
 
       <div class="projects-list">
-        @for (proyect of proyects; track proyect.title) {
+        @for (proyect of ts.t.projects; track proyect.title) {
           <div class="project-item-card" (click)="openDialog(proyect)">
             <!-- Thumbnail Visual Banner -->
             <div class="project-card-thumb" [class.mobile-thumb]="proyect.isMobile">
@@ -94,7 +67,7 @@
                     <line x1="11" y1="8" x2="11" y2="14"></line>
                     <line x1="8" y1="11" x2="14" y2="11"></line>
                   </svg>
-                  Ver galería ({{ proyect.images.length }} {{ proyect.images.length === 1 ? 'captura' : 'capturas' }})
+                  {{ proyect.images.length }} {{ ts.t.about.screenshotsBadge }}
                 </span>
               </div>
               <div class="thumb-badge-top">
@@ -107,7 +80,7 @@
               <div class="project-title-row">
                 <h3 class="project-title">{{ proyect.title }}</h3>
                 <span class="project-view-badge">
-                  Detalles
+                  {{ ts.t.about.viewDetailsBtn }}
                   <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <line x1="5" y1="12" x2="19" y2="12"></line>
                     <polyline points="12 5 19 12 12 19"></polyline>

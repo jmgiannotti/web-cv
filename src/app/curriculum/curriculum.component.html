@@ -10,9 +10,12 @@
             <circle cx="12" cy="7" r="4"></circle>
           </svg>
         </div>
-        <h2 class="card-heading">Perfil Profesional</h2>
+        <div class="header-text-group">
+          <h2 class="card-heading">{{ ts.t.cv.profileTitle }}</h2>
+          <span class="header-sub">{{ ts.t.cv.profileSub }}</span>
+        </div>
       </div>
-      <p class="profile-text">{{ profileTxt }}</p>
+      <p class="profile-text">{{ ts.t.cv.profileTxt }}</p>
     </mat-card>
 
     <!-- Education Card (Timeline) -->
@@ -24,11 +27,14 @@
             <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
           </svg>
         </div>
-        <h2 class="card-heading">Educación</h2>
+        <div class="header-text-group">
+          <h2 class="card-heading">{{ ts.t.cv.eduTitle }}</h2>
+          <span class="header-sub">{{ ts.t.cv.eduSub }}</span>
+        </div>
       </div>
 
       <div class="timeline">
-        @for (edu of educationList; track edu.degree) {
+        @for (edu of ts.t.cv.education; track edu.degree) {
           <div class="timeline-item" [class.current]="edu.isCurrent">
             <div class="timeline-dot"></div>
             <div class="timeline-content">
@@ -55,11 +61,11 @@
             <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
           </svg>
         </div>
-        <h2 class="card-heading">Idiomas</h2>
+        <h2 class="card-heading">{{ ts.t.cv.langTitle }}</h2>
       </div>
 
       <div class="languages-list">
-        @for (lang of languages; track lang.name) {
+        @for (lang of ts.t.cv.languages; track lang.name) {
           <div class="lang-row">
             <div class="lang-info">
               <span class="lang-name">{{ lang.name }}</span>
@@ -84,36 +90,36 @@
           </svg>
         </div>
         <div class="header-text-group">
-          <h2 class="card-heading">Experiencia Profesional</h2>
-          <span class="header-sub">Trayectoria y desarrollo de software</span>
+          <h2 class="card-heading">{{ ts.t.cv.expTitle }}</h2>
+          <span class="header-sub">{{ ts.t.cv.expSub }}</span>
         </div>
       </div>
 
       <div class="job-container">
         <div class="job-header">
           <div>
-            <h3 class="job-title">{{ experience.role }}</h3>
+            <h3 class="job-title">{{ ts.t.cv.experience.role }}</h3>
             <div class="job-meta">
-              <span class="job-company">{{ experience.company }}</span>
+              <span class="job-company">{{ ts.t.cv.experience.company }}</span>
               <span class="meta-separator">•</span>
-              <span class="job-type-pill">{{ experience.type }}</span>
+              <span class="job-type-pill">{{ ts.t.cv.experience.type }}</span>
               <span class="meta-separator">•</span>
-              <span class="job-period">{{ experience.period }}</span>
-              <span class="job-duration-tag">({{ experience.duration }})</span>
+              <span class="job-period">{{ ts.t.cv.experience.period }}</span>
+              <span class="job-duration-tag">({{ ts.t.cv.experience.duration }})</span>
             </div>
           </div>
         </div>
 
         <!-- Tech Stack Used -->
         <div class="job-stack">
-          @for (tech of experience.stack; track tech) {
+          @for (tech of ts.t.cv.experience.stack; track tech) {
             <span class="stack-tag">{{ tech }}</span>
           }
         </div>
 
         <!-- Bullets -->
         <ul class="job-bullets">
-          @for (detail of experience.details; track detail) {
+          @for (detail of ts.t.cv.experience.details; track detail) {
             <li>
               <svg class="bullet-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                 <polyline points="20 6 9 17 4 12"></polyline>
@@ -135,14 +141,13 @@
           </svg>
         </div>
         <div class="header-text-group">
-          <h2 class="card-heading">Aptitudes Técnicas</h2>
-          <span class="header-sub">Stack tecnológico y herramientas</span>
+          <h2 class="card-heading">{{ ts.t.cv.skillsTitle }}</h2>
+          <span class="header-sub">{{ ts.t.cv.skillsSub }}</span>
         </div>
       </div>
 
       <!-- Main Visual Skill Chips with Logos -->
       <div class="chips-featured-section">
-        <span class="skills-category-label">Tecnologías Principales</span>
         <mat-chip-set class="tech-chips-grid">
           @for (chip of chips; track chip.title) {
             <mat-chip class="custom-tech-chip">
@@ -160,7 +165,7 @@
 
       <!-- Categorized Skills breakdown -->
       <div class="skills-categories-grid">
-        @for (cat of skillCategories; track cat.category) {
+        @for (cat of ts.t.cv.skillCategories; track cat.category) {
           <div class="skill-category-box">
             <h4 class="category-name">{{ cat.category }}</h4>
             <div class="category-tags">
