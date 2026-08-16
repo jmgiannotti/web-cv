@@ -75,7 +75,7 @@ export class TranslationService {
         langTitle: 'Idiomas',
         languages: [
           { name: 'Español', level: 'Nativo', detail: 'Lengua materna' },
-          { name: 'Inglés', level: 'B2+ / Avanzado', detail: 'Estudios formales' }
+          { name: 'Inglés', level: 'B2 / Avanzado', detail: 'Estudios formales' }
         ],
         expTitle: 'Experiencia Profesional',
         expSub: 'Trayectoria y desarrollo de software',
@@ -258,7 +258,7 @@ export class TranslationService {
         langTitle: 'Languages',
         languages: [
           { name: 'Spanish', level: 'Native', detail: 'Mother tongue' },
-          { name: 'English', level: 'B2+ / Advanced', detail: 'Formal education' }
+          { name: 'English', level: 'B2 / Advanced', detail: 'Formal education' }
         ],
         expTitle: 'Professional Experience',
         expSub: 'Career history and software development',
