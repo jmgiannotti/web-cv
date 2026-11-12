@@ -13,6 +13,7 @@ export interface ProjectData {
   isMobile: boolean;
   urlMock: string;
   githubUrl?: string;
+  liveUrl?: string;
   highlights: string[];
   descriptionL: string;
 }
@@ -63,11 +64,9 @@ export class TranslationService {
       },
       cv: {
         locationLabel: 'Ubicación',
-        profileTitle: 'Perfil Profesional',
-        profileSub: 'Acerca de mi enfoque y objetivos',
+        profileTitle: 'Perfil',
         profileTxt: 'Estudiante de Ingeniería en Informática con pasión por el aprendizaje continuo y la resolución de desafíos técnicos. Destaco por mi capacidad para trabajar en equipo, comunicación efectiva y disciplina, habilidades desarrolladas en proyectos colaborativos. Poseo un nivel avanzado de inglés, adquirido mediante estudios formales.',
-        eduTitle: 'Educación & Formación',
-        eduSub: 'Trayectoria académica formal',
+        eduTitle: 'Formación',
         education: [
           {
             degree: 'Ingeniería en Informática',
@@ -91,8 +90,7 @@ export class TranslationService {
           { name: 'Español', level: 'Nativo', detail: 'Lengua materna' },
           { name: 'Inglés', level: 'B2 / Avanzado', detail: 'Estudios formales' }
         ],
-        expTitle: 'Experiencia Profesional',
-        expSub: 'Trayectoria y desarrollo de software',
+        expTitle: 'Experiencia',
         experience: {
           role: 'Junior Backend Developer',
           company: 'Xenio',
@@ -109,8 +107,7 @@ export class TranslationService {
             'Enfoque en calidad de código, rendimiento y mantenibilidad del servicio.'
           ]
         },
-        skillsTitle: 'Aptitudes & Stack Tecnológico',
-        skillsSub: 'Herramientas y tecnologías dominadas',
+        skillsTitle: 'Stack',
         skillCategories: [
           {
             category: 'Lenguajes & Backend',
@@ -135,8 +132,7 @@ export class TranslationService {
         ]
       },
       about: {
-        accordionTitle: 'Conocé más sobre mí',
-        accordionSub: 'Perfil personal, método de trabajo e intereses',
+        accordionTitle: 'Sobre mí',
         panels: [
           {
             title: '¿Quién soy?',
@@ -159,16 +155,15 @@ export class TranslationService {
             content: 'Fuera de la programación, disfruto jugar al vóley competitivo, la lectura, el gaming estratégico y explorar continuamente tendencias de innovación tecnológica.'
           }
         ],
-        projectsTitle: 'Proyectos Destacados',
-        projectsSub: 'Aplicaciones desarrolladas y proyectos open source',
-        viewDetailsBtn: 'Ver detalles',
-        screenshotsBadge: 'capturas'
+        projectsTitle: 'Proyectos',
+        liveBadge: 'DEMO'
       },
       dialog: {
-        techUsed: 'Tecnologías Utilizadas',
+        techUsed: 'Stack',
         description: 'Descripción',
-        keyHighlights: 'Aspectos Clave & Arquitectura',
-        viewGithub: 'Ver repositorio en GitHub ↗',
+        keyHighlights: 'Arquitectura',
+        viewGithub: 'GitHub ↗',
+        viewLive: 'Demo ↗',
         close: 'Cerrar'
       },
       projects: [
@@ -230,6 +225,26 @@ export class TranslationService {
             "Autenticación y base de datos NoSQL en tiempo real con Firebase Firestore."
           ],
           descriptionL: "Aplicación móvil desarrollada en Kotlin para explorar películas en cartelera, ver detalles de elenco, trailers y dejar comentarios y reseñas en tiempo real. Cuenta con integración de API pública de películas y almacenamiento en la nube mediante Firebase para autenticación de usuarios y persistencia de interacciones."
+        },
+        {
+          title: "Elemental TD",
+          type: "Game Architecture & Tooling",
+          stack: ["JavaScript", "Phaser 4", "Vite", "Node.js", "A* Pathfinding"],
+          description: "Juego de estrategia en tiempo real en el navegador con pathfinding dinámico A*, arquitectura orientada a eventos y tooling propio en Node.js.",
+          images: [
+            'assets/images/ElementTD-cap1.jpg'
+          ],
+          isMobile: false,
+          urlMock: "https://element-td.onrender.com",
+          liveUrl: "https://element-td.onrender.com",
+          githubUrl: "https://github.com/jmgiannotti/element-td",
+          highlights: [
+            "Pathfinding A* en tiempo real y validación topológica en grilla para construcción dinámica de laberintos sin bloqueo de ruta.",
+            "Arquitectura desacoplada mediante Event Bus entre el motor de simulación (GameScene) y la capa de interfaz (UIScene), dividida en 9 sistemas modulares.",
+            "Plugin propio de Vite y CLI en Node.js (ExcelJS) para sincronización bidireccional en caliente de tablas de balance desde planillas Excel.",
+            "Pipeline automatizado en Node.js para parsear archivos binarios de Aseprite (.ase) y compilarlos a atlas y texturas Base64."
+          ],
+          descriptionL: "Tower Defense 2D desarrollado con Phaser 4 y empaquetado con Vite, diseñado bajo una arquitectura modular de sistemas desacoplados (economía dual, fusiones elementales, oleadas procedurales, árbol de talentos y eventos de mapa). Más allá del motor de juego, incluye herramientas de ingeniería propias en Node.js para compilar binarios de Aseprite y sincronizar el balance matemático en vivo desde Excel mediante módulos virtuales de Vite."
         }
       ]
     },
@@ -258,11 +273,9 @@ export class TranslationService {
       },
       cv: {
         locationLabel: 'Location',
-        profileTitle: 'Professional Profile',
-        profileSub: 'About my technical focus and career goals',
+        profileTitle: 'Profile',
         profileTxt: 'Informatics Engineering student passionate about continuous learning and technical problem solving. Recognized for teamwork, effective communication, and discipline developed across collaborative software projects. Advanced English proficiency acquired through formal education.',
-        eduTitle: 'Education & Training',
-        eduSub: 'Formal academic background',
+        eduTitle: 'Education',
         education: [
           {
             degree: "Bachelor's in Informatics Engineering",
@@ -286,8 +299,7 @@ export class TranslationService {
           { name: 'Spanish', level: 'Native', detail: 'Mother tongue' },
           { name: 'English', level: 'B2 / Advanced', detail: 'Formal education' }
         ],
-        expTitle: 'Professional Experience',
-        expSub: 'Career history and software development',
+        expTitle: 'Experience',
         experience: {
           role: 'Junior Backend Developer',
           company: 'Xenio',
@@ -304,8 +316,7 @@ export class TranslationService {
             'Focus on code quality, performance, and service maintainability.'
           ]
         },
-        skillsTitle: 'Skills & Tech Stack',
-        skillsSub: 'Mastered tools and technologies',
+        skillsTitle: 'Stack',
         skillCategories: [
           {
             category: 'Languages & Backend',
@@ -330,8 +341,7 @@ export class TranslationService {
         ]
       },
       about: {
-        accordionTitle: 'Learn More About Me',
-        accordionSub: 'Personal profile, work methodology and goals',
+        accordionTitle: 'About',
         panels: [
           {
             title: 'Who am I?',
@@ -354,16 +364,15 @@ export class TranslationService {
             content: 'Outside of coding, I enjoy competitive volleyball, reading, strategic gaming, and constantly exploring emerging tech innovation trends.'
           }
         ],
-        projectsTitle: 'Featured Projects',
-        projectsSub: 'Highlighted applications and open source work',
-        viewDetailsBtn: 'View Details',
-        screenshotsBadge: 'screenshots'
+        projectsTitle: 'Projects',
+        liveBadge: 'DEMO'
       },
       dialog: {
-        techUsed: 'Technologies Used',
+        techUsed: 'Stack',
         description: 'Description',
-        keyHighlights: 'Key Highlights & Architecture',
-        viewGithub: 'View repository on GitHub ↗',
+        keyHighlights: 'Architecture',
+        viewGithub: 'GitHub ↗',
+        viewLive: 'Demo ↗',
         close: 'Close'
       },
       projects: [
@@ -425,6 +434,26 @@ export class TranslationService {
             "Real-time user authentication and NoSQL cloud database using Firebase Firestore."
           ],
           descriptionL: "Native Android mobile application built with Kotlin to discover in-theater movies, view cast details and trailers, and post real-time reviews. Features seamless public movie API integration and cloud storage via Firebase for authentication and user interactions."
+        },
+        {
+          title: "Elemental TD",
+          type: "Game Architecture & Tooling",
+          stack: ["JavaScript", "Phaser 4", "Vite", "Node.js", "A* Pathfinding"],
+          description: "Browser-based real-time strategy game featuring dynamic A* pathfinding, event-driven architecture, and custom Node.js build tooling.",
+          images: [
+            'assets/images/ElementTD-cap1.jpg'
+          ],
+          isMobile: false,
+          urlMock: "https://element-td.onrender.com",
+          liveUrl: "https://element-td.onrender.com",
+          githubUrl: "https://github.com/jmgiannotti/element-td",
+          highlights: [
+            "Real-time A* pathfinding and grid topology validation for dynamic barricade mazing without blocking enemy routes.",
+            "Decoupled Event Bus architecture separating simulation state (GameScene) from the HUD overlay (UIScene) across 9 modular systems.",
+            "Custom Vite virtual-module plugin and Node.js CLI (ExcelJS) for live two-way game balance synchronization from Excel spreadsheets.",
+            "Automated Node.js asset pipeline parsing binary Aseprite (.ase) files directly into Base64 sprite textures."
+          ],
+          descriptionL: "2D Tower Defense game built with Phaser 4 and Vite, engineered around decoupled domain systems (dual economy, elemental tower fusions, procedural infinite waves, talent trees, and map events). Beyond gameplay logic, the project features custom Node.js engineering tools for binary Aseprite compilation and hot-reloaded mathematical balance synchronization from Excel via Vite virtual modules."
         }
       ]
     }

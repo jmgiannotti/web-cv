@@ -194,7 +194,14 @@
   padding-top: 0.5rem;
 }
 
-.drawer-github-btn {
+.drawer-actions-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+.drawer-primary-btn {
   display: inline-flex;
   align-items: center;
   gap: 10px;
@@ -211,14 +218,38 @@
   width: fit-content;
 }
 
-.drawer-github-btn:hover {
+.drawer-primary-btn:hover {
   transform: translate(-3px, -3px);
   box-shadow: 3px 3px 0 0 var(--accent-2);
 }
 
-.drawer-github-btn .btn-icon {
-  width: 18px;
-  height: 18px;
+.drawer-secondary-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--bg-surface-solid);
+  color: var(--text-primary);
+  border: 1px solid var(--border-strong);
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  width: fit-content;
+}
+
+.drawer-secondary-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.drawer-primary-btn .btn-icon,
+.drawer-secondary-btn .btn-icon {
+  width: 17px;
+  height: 17px;
 }
 
 @media (max-width: 600px) {

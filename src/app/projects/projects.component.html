@@ -1,10 +1,7 @@
 <section id="proyectos" class="ed-section projects-section">
   <header class="ed-section-header">
     <span class="ed-section-num">03</span>
-    <div class="ed-section-titles">
-      <h2 class="ed-section-title">{{ ts.t.about.projectsTitle }}</h2>
-      <p class="ed-section-sub">{{ ts.t.about.projectsSub }}</p>
-    </div>
+    <h2 class="ed-section-title">{{ ts.t.about.projectsTitle }}</h2>
   </header>
 
   <div class="project-index-list">
@@ -28,6 +25,12 @@
           <div class="project-row-head">
             <h3 class="project-row-title">{{ proyect.title }}</h3>
             <span class="project-row-type">{{ proyect.type }}</span>
+            @if (proyect.liveUrl) {
+              <span class="project-row-live">
+                <span class="live-dot" aria-hidden="true"></span>
+                {{ ts.t.about.liveBadge }}
+              </span>
+            }
           </div>
 
           <p class="project-row-desc">{{ proyect.description }}</p>
@@ -51,7 +54,6 @@
         </div>
 
         <div class="project-row-cta">
-          <span class="cta-label">{{ ts.t.about.viewDetailsBtn }}</span>
           <span class="cta-arrow" aria-hidden="true">→</span>
         </div>
       </article>
