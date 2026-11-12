@@ -1,181 +1,127 @@
-<div class="cv-grid animate-fade-in">
-  <!-- Left Column: Profile, Education, Languages -->
-  <div class="cv-col-sidebar">
-    <!-- Profile Card -->
-    <mat-card class="cv-card profile-card">
-      <div class="card-header-clean">
-        <div class="header-icon-box">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-            <circle cx="12" cy="7" r="4"></circle>
-          </svg>
-        </div>
-        <div class="header-text-group">
-          <h2 class="card-heading">{{ ts.t.cv.profileTitle }}</h2>
-          <span class="header-sub">{{ ts.t.cv.profileSub }}</span>
-        </div>
-      </div>
-      <p class="profile-text">{{ ts.t.cv.profileTxt }}</p>
-    </mat-card>
+<!-- 01: Perfil Profesional -->
+<section id="perfil" class="ed-section section-perfil">
+  <header class="ed-section-header">
+    <span class="ed-section-num">01</span>
+    <div class="ed-section-titles">
+      <h2 class="ed-section-title">{{ ts.t.cv.profileTitle }}</h2>
+      <p class="ed-section-sub">{{ ts.t.cv.profileSub }}</p>
+    </div>
+  </header>
 
-    <!-- Education Card (Timeline) -->
-    <mat-card class="cv-card">
-      <div class="card-header-clean">
-        <div class="header-icon-box">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
-            <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
-          </svg>
-        </div>
-        <div class="header-text-group">
-          <h2 class="card-heading">{{ ts.t.cv.eduTitle }}</h2>
-          <span class="header-sub">{{ ts.t.cv.eduSub }}</span>
-        </div>
-      </div>
+  <div class="perfil-layout">
+    <p class="perfil-lead">{{ ts.t.cv.profileTxt }}</p>
 
-      <div class="timeline">
-        @for (edu of ts.t.cv.education; track edu.degree) {
-          <div class="timeline-item" [class.current]="edu.isCurrent">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <div class="timeline-badge-row">
-                <span class="edu-type">{{ edu.type }}</span>
-                <span class="edu-status-badge" [class.badge-current]="edu.isCurrent">{{ edu.status }}</span>
-              </div>
-              <h3 class="edu-degree">{{ edu.degree }}</h3>
-              <p class="edu-inst">{{ edu.institution }}</p>
-              <span class="edu-period">{{ edu.period }}</span>
-            </div>
-          </div>
-        }
+    <dl class="perfil-facts">
+      <div class="fact-row">
+        <dt>{{ ts.t.cv.locationLabel }}</dt>
+        <dd>{{ ts.t.hero.location }}</dd>
       </div>
-    </mat-card>
-
-    <!-- Languages Card -->
-    <mat-card class="cv-card">
-      <div class="card-header-clean">
-        <div class="header-icon-box">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="12" r="10"></circle>
-            <line x1="2" y1="12" x2="22" y2="12"></line>
-            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-          </svg>
+      @for (lang of ts.t.cv.languages; track lang.name) {
+        <div class="fact-row">
+          <dt>{{ lang.name }}</dt>
+          <dd>
+            <span class="fact-main">{{ lang.level }}</span>
+            <span class="fact-muted">· {{ lang.detail }}</span>
+          </dd>
         </div>
-        <h2 class="card-heading">{{ ts.t.cv.langTitle }}</h2>
-      </div>
-
-      <div class="languages-list">
-        @for (lang of ts.t.cv.languages; track lang.name) {
-          <div class="lang-row">
-            <div class="lang-info">
-              <span class="lang-name">{{ lang.name }}</span>
-              <span class="lang-detail">{{ lang.detail }}</span>
-            </div>
-            <span class="lang-level-badge">{{ lang.level }}</span>
-          </div>
-        }
-      </div>
-    </mat-card>
+      }
+    </dl>
   </div>
+</section>
 
-  <!-- Right Column: Professional Experience, Technical Skills -->
-  <div class="cv-col-main">
-    <!-- Professional Experience Card -->
-    <mat-card class="cv-card exp-card">
-      <div class="card-header-clean">
-        <div class="header-icon-box">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
-            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
-          </svg>
-        </div>
-        <div class="header-text-group">
-          <h2 class="card-heading">{{ ts.t.cv.expTitle }}</h2>
-          <span class="header-sub">{{ ts.t.cv.expSub }}</span>
-        </div>
+<!-- 02: Experiencia Profesional -->
+<section id="experiencia" class="ed-section section-experiencia">
+  <header class="ed-section-header">
+    <span class="ed-section-num">02</span>
+    <div class="ed-section-titles">
+      <h2 class="ed-section-title">{{ ts.t.cv.expTitle }}</h2>
+      <p class="ed-section-sub">{{ ts.t.cv.expSub }}</p>
+    </div>
+  </header>
+
+  <article class="exp-entry">
+    <div class="exp-aside">
+      <span class="exp-period">{{ ts.t.cv.experience.period }}</span>
+      <span class="exp-duration">{{ ts.t.cv.experience.duration }}</span>
+      <span class="exp-type-tag">{{ ts.t.cv.experience.type }}</span>
+    </div>
+
+    <div class="exp-body">
+      <div class="exp-heading-row">
+        <h3 class="exp-role">{{ ts.t.cv.experience.role }}</h3>
+        <span class="exp-company">&#64; {{ ts.t.cv.experience.company }}</span>
       </div>
 
-      <div class="job-container">
-        <div class="job-header">
-          <div>
-            <h3 class="job-title">{{ ts.t.cv.experience.role }}</h3>
-            <div class="job-meta">
-              <span class="job-company">{{ ts.t.cv.experience.company }}</span>
-              <span class="meta-separator">•</span>
-              <span class="job-type-pill">{{ ts.t.cv.experience.type }}</span>
-              <span class="meta-separator">•</span>
-              <span class="job-period">{{ ts.t.cv.experience.period }}</span>
-              <span class="job-duration-tag">({{ ts.t.cv.experience.duration }})</span>
-            </div>
-          </div>
-        </div>
+      <ul class="exp-bullets">
+        @for (detail of ts.t.cv.experience.details; track detail) {
+          <li>
+            <span class="bullet-marker" aria-hidden="true">▸</span>
+            <span>{{ detail }}</span>
+          </li>
+        }
+      </ul>
 
-        <!-- Tech Stack Used -->
-        <div class="job-stack">
-          @for (tech of ts.t.cv.experience.stack; track tech) {
-            <span class="stack-tag">{{ tech }}</span>
-          }
-        </div>
-
-        <!-- Bullets -->
-        <ul class="job-bullets">
-          @for (detail of ts.t.cv.experience.details; track detail) {
-            <li>
-              <svg class="bullet-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <polyline points="20 6 9 17 4 12"></polyline>
-              </svg>
-              <span>{{ detail }}</span>
-            </li>
-          }
-        </ul>
-      </div>
-    </mat-card>
-
-    <!-- Technical Skills Card -->
-    <mat-card class="cv-card skills-card">
-      <div class="card-header-clean">
-        <div class="header-icon-box">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <polyline points="16 18 22 12 16 6"></polyline>
-            <polyline points="8 6 2 12 8 18"></polyline>
-          </svg>
-        </div>
-        <div class="header-text-group">
-          <h2 class="card-heading">{{ ts.t.cv.skillsTitle }}</h2>
-          <span class="header-sub">{{ ts.t.cv.skillsSub }}</span>
-        </div>
-      </div>
-
-      <!-- Main Visual Skill Chips with Logos -->
-      <div class="chips-featured-section">
-        <mat-chip-set class="tech-chips-grid">
-          @for (chip of chips; track chip.title) {
-            <mat-chip class="custom-tech-chip">
-              <img
-                matChipAvatar
-                [src]="chip.img"
-                [alt]="chip.title"
-                class="chip-avatar-img"
-              />
-              <span class="chip-title-text">{{ chip.title }}</span>
-            </mat-chip>
-          }
-        </mat-chip-set>
-      </div>
-
-      <!-- Categorized Skills breakdown -->
-      <div class="skills-categories-grid">
-        @for (cat of ts.t.cv.skillCategories; track cat.category) {
-          <div class="skill-category-box">
-            <h4 class="category-name">{{ cat.category }}</h4>
-            <div class="category-tags">
-              @for (skill of cat.skills; track skill) {
-                <span class="category-tag">{{ skill }}</span>
-              }
-            </div>
-          </div>
+      <div class="exp-stack">
+        @for (tech of ts.t.cv.experience.stack; track tech) {
+          <span class="exp-stack-tag">{{ tech }}</span>
         }
       </div>
-    </mat-card>
+    </div>
+  </article>
+</section>
+
+<!-- 04: Aptitudes & Stack Tecnológico -->
+<section id="stack" class="ed-section section-stack">
+  <header class="ed-section-header">
+    <span class="ed-section-num">04</span>
+    <div class="ed-section-titles">
+      <h2 class="ed-section-title">{{ ts.t.cv.skillsTitle }}</h2>
+      <p class="ed-section-sub">{{ ts.t.cv.skillsSub }}</p>
+    </div>
+  </header>
+
+  <div class="stack-matrix">
+    @for (cat of ts.t.cv.skillCategories; track cat.category; let i = $index) {
+      <div class="stack-cell">
+        <div class="stack-cell-head">
+          <span class="stack-cell-num">04.{{ i + 1 }}</span>
+          <h3 class="stack-cell-title">{{ cat.category }}</h3>
+        </div>
+        <div class="stack-cell-tags">
+          @for (skill of cat.skills; track skill) {
+            <span class="stack-chip">{{ skill }}</span>
+          }
+        </div>
+      </div>
+    }
   </div>
-</div>
+</section>
+
+<!-- 05: Educación & Formación -->
+<section id="formacion" class="ed-section section-formacion">
+  <header class="ed-section-header">
+    <span class="ed-section-num">05</span>
+    <div class="ed-section-titles">
+      <h2 class="ed-section-title">{{ ts.t.cv.eduTitle }}</h2>
+      <p class="ed-section-sub">{{ ts.t.cv.eduSub }}</p>
+    </div>
+  </header>
+
+  <div class="edu-list">
+    @for (edu of ts.t.cv.education; track edu.degree) {
+      <article class="edu-row" [class.is-current]="edu.isCurrent">
+        <div class="edu-meta">
+          <span class="edu-period">{{ edu.period }}</span>
+          <div class="edu-badges">
+            <span class="edu-type">{{ edu.type }}</span>
+            <span class="edu-status" [class.current]="edu.isCurrent">{{ edu.status }}</span>
+          </div>
+        </div>
+        <div class="edu-main">
+          <h3 class="edu-degree">{{ edu.degree }}</h3>
+          <p class="edu-inst">{{ edu.institution }}</p>
+        </div>
+      </article>
+    }
+  </div>
+</section>

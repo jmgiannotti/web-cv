@@ -14,7 +14,7 @@
 .browser-mockup-frame {
   width: 100%;
   max-width: 720px;
-  background: #111827;
+  background: var(--bg-dark);
   border-radius: 14px;
   border: 1px solid rgba(255, 255, 255, 0.12);
   box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.6), 0 0 1px 1px rgba(255, 255, 255, 0.05);
@@ -29,7 +29,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 10px 14px;
-  background: #1e293b;
+  background: var(--bg-surface-solid);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   gap: 12px;
 }
@@ -49,7 +49,7 @@
 
 .dot-red { background: #ef4444; }
 .dot-yellow { background: #f59e0b; }
-.dot-green { background: #10b981; }
+.dot-green { background: var(--accent); }
 
 .browser-address-bar {
   flex: 1;
@@ -57,11 +57,11 @@
   display: flex;
   align-items: center;
   gap: 6px;
-  background: rgba(15, 23, 42, 0.6);
+  background: rgba(var(--surface-rgb), 0.6);
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 6px;
   padding: 4px 10px;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-mono);
   font-size: 0.75rem;
   color: var(--text-muted);
   overflow: hidden;
@@ -72,7 +72,7 @@
 .lock-icon {
   width: 12px;
   height: 12px;
-  color: #10b981;
+  color: var(--accent);
   flex-shrink: 0;
 }
 
@@ -114,7 +114,7 @@
   position: relative;
   width: 100%;
   aspect-ratio: 16 / 9.5;
-  background: #0b0f19;
+  background: var(--bg-dark);
   cursor: zoom-in;
   overflow: hidden;
   display: flex;
@@ -127,8 +127,8 @@
    ========================================================================== */
 .phone-mockup-frame {
   width: 280px;
-  background: #1e293b;
-  border: 3px solid #334155;
+  background: var(--bg-surface-solid);
+  border: 3px solid var(--border-strong);
   border-radius: 36px;
   padding: 10px;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.1);
@@ -142,7 +142,7 @@
 .phone-notch {
   width: 100px;
   height: 18px;
-  background: #0f172a;
+  background: var(--bg-surface-solid);
   border-radius: 12px;
   margin-bottom: 8px;
   display: flex;
@@ -155,23 +155,23 @@
 .phone-speaker {
   width: 36px;
   height: 3px;
-  background: #334155;
+  background: var(--border-strong);
   border-radius: 2px;
 }
 
 .phone-camera {
   width: 6px;
   height: 6px;
-  background: #1e293b;
+  background: var(--bg-surface-solid);
   border-radius: 50%;
-  border: 1px solid #334155;
+  border: 1px solid var(--border-strong);
 }
 
 .phone-screen {
   position: relative;
   width: 100%;
   aspect-ratio: 9 / 18.5;
-  background: #090d16;
+  background: var(--bg-dark);
   border-radius: 24px;
   overflow: hidden;
   cursor: zoom-in;
@@ -183,7 +183,7 @@
 .phone-home-bar {
   width: 90px;
   height: 4px;
-  background: #475569;
+  background: var(--border-strong);
   border-radius: 2px;
   margin-top: 8px;
 }
@@ -192,7 +192,7 @@
   position: absolute;
   bottom: 12px;
   right: 12px;
-  background: rgba(15, 23, 42, 0.85);
+  background: rgba(var(--surface-rgb), 0.85);
   backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.12);
   color: #fff;
@@ -218,12 +218,12 @@
 .browser-screen:hover .zoom-badge {
   opacity: 1;
   background: var(--primary-cyan);
-  color: #0b0f17;
+  color: var(--bg-dark);
 }
 
 .phone-screen:hover .zoom-badge svg,
 .browser-screen:hover .zoom-badge svg {
-  color: #0b0f17;
+  color: var(--bg-dark);
 }
 
 /* ==========================================================================
@@ -273,7 +273,7 @@
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: rgba(30, 41, 59, 0.8);
+  background: rgba(var(--surface-2-rgb), 0.8);
   border: 1px solid var(--border-subtle);
   color: var(--text-primary);
   display: flex;
@@ -291,7 +291,7 @@
 }
 
 .nav-arrow-btn:hover {
-  background: rgba(56, 189, 248, 0.2);
+  background: rgba(var(--accent-rgb), 0.2);
   border-color: var(--border-accent);
   color: var(--primary-cyan);
   transform: scale(1.08);
@@ -301,11 +301,11 @@
   display: flex;
   align-items: center;
   gap: 4px;
-  background: rgba(15, 23, 42, 0.8);
+  background: rgba(var(--surface-rgb), 0.8);
   border: 1px solid var(--border-subtle);
   padding: 4px 12px;
   border-radius: 9999px;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-mono);
   font-size: 0.8rem;
   font-weight: 600;
   color: var(--text-secondary);
@@ -334,7 +334,7 @@
   opacity: 0.55;
   cursor: pointer;
   transition: all 0.2s ease;
-  background: #0f172a;
+  background: var(--bg-surface-solid);
 }
 
 .thumb-item.thumb-mobile {
@@ -357,7 +357,7 @@
 .thumb-item.active {
   opacity: 1;
   border-color: var(--primary-cyan);
-  box-shadow: 0 0 12px rgba(0, 242, 254, 0.4);
+  box-shadow: none;
 }
 
 /* ==========================================================================
@@ -366,7 +366,7 @@
 .lightbox-backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(5, 8, 15, 0.92);
+  background: rgba(var(--bg-rgb), 0.92);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   z-index: 99999;
@@ -432,7 +432,7 @@
 
 .lightbox-counter {
   color: var(--text-secondary);
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-mono);
   font-size: 0.9rem;
 }
 

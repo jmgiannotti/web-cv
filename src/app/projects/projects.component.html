@@ -1,0 +1,61 @@
+<section id="proyectos" class="ed-section projects-section">
+  <header class="ed-section-header">
+    <span class="ed-section-num">03</span>
+    <div class="ed-section-titles">
+      <h2 class="ed-section-title">{{ ts.t.about.projectsTitle }}</h2>
+      <p class="ed-section-sub">{{ ts.t.about.projectsSub }}</p>
+    </div>
+  </header>
+
+  <div class="project-index-list">
+    @for (proyect of ts.t.projects; track proyect.title; let i = $index) {
+      <article
+        class="project-row"
+        [class.is-hovered]="hoveredIndex() === i"
+        (mouseenter)="hoveredIndex.set(i)"
+        (mouseleave)="hoveredIndex.set(null)"
+        (click)="openDrawer(proyect, i)"
+        tabindex="0"
+        role="button"
+        (keydown.enter)="openDrawer(proyect, i)"
+        (keydown.space)="$event.preventDefault(); openDrawer(proyect, i)"
+      >
+        <div class="project-row-index">
+          <span>03.{{ i + 1 }}</span>
+        </div>
+
+        <div class="project-row-main">
+          <div class="project-row-head">
+            <h3 class="project-row-title">{{ proyect.title }}</h3>
+            <span class="project-row-type">{{ proyect.type }}</span>
+          </div>
+
+          <p class="project-row-desc">{{ proyect.description }}</p>
+
+          <div class="project-row-stack">
+            @for (tech of proyect.stack; track tech) {
+              <span class="project-stack-item">{{ tech }}</span>
+            }
+          </div>
+        </div>
+
+        <div class="project-row-preview">
+          <div class="preview-frame" [class.is-mobile]="proyect.isMobile">
+            <img
+              [src]="proyect.images[0]"
+              [alt]="proyect.title"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+        </div>
+
+        <div class="project-row-cta">
+          <span class="cta-label">{{ ts.t.about.viewDetailsBtn }}</span>
+          <span class="cta-arrow" aria-hidden="true">→</span>
+        </div>
+      </article>
+    }
+  </div>
+</section>
+

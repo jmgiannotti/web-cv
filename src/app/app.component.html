@@ -1,10 +1,18 @@
-
 <div class="app-layout">
   <app-particles-background></app-particles-background>
 
-  <!-- Floating Language Switcher -->
-  <div class="top-nav-bar animate-fade-in">
-    <div class="lang-switcher">
+  <!-- Editorial Masthead -->
+  <header class="masthead animate-fade-in">
+    <div class="masthead-left">
+      <span class="monogram">JMG</span>
+      <span class="masthead-sep">/</span>
+      <div class="status-tag">
+        <span class="status-dot"></span>
+        <span class="status-text">{{ ts.t.hero.status }}</span>
+      </div>
+    </div>
+
+    <div class="lang-switcher" role="group" aria-label="Language switcher">
       <button
         type="button"
         class="lang-btn"
@@ -12,10 +20,9 @@
         (click)="ts.setLanguage('es')"
         title="Cambiar a Español"
       >
-        <span class="lang-flag">🇦🇷</span>
-        <span class="lang-text">ES</span>
+        ES
       </button>
-      <span class="lang-sep">|</span>
+      <span class="lang-sep">/</span>
       <button
         type="button"
         class="lang-btn"
@@ -23,125 +30,178 @@
         (click)="ts.setLanguage('en')"
         title="Switch to English"
       >
-        <span class="lang-flag">🇺🇸</span>
-        <span class="lang-text">EN</span>
+        EN
       </button>
-    </div>
-  </div>
-
-  <!-- Hero Section -->
-  <header class="hero-section animate-fade-in">
-    <!-- Status Badge -->
-    <div class="status-pill">
-      <span class="status-dot"></span>
-      <span class="status-text">{{ ts.t.hero.status }}</span>
-    </div>
-
-    <!-- Avatar with glowing border -->
-    <div class="avatar-container">
-      <div class="avatar-glow"></div>
-      <img
-        src="assets/images/avatar.jpg"
-        alt="Juan Martin Giannotti"
-        draggable="false"
-        class="avatar-img"
-        width="120"
-        height="120"
-        fetchpriority="high"
-        loading="eager"
-        decoding="async"
-      />
-    </div>
-
-    <!-- Name & Title -->
-    <h1 class="hero-name">{{ contactInfo.name }}</h1>
-    <p class="hero-subtitle">{{ ts.t.hero.role }}</p>
-
-    <!-- Quick Tech Stack Badges -->
-    <div class="tech-pills">
-      <span class="tech-pill">Angular</span>
-      <span class="tech-pill">Node.js</span>
-      <span class="tech-pill">Spring Boot</span>
-      <span class="tech-pill">Vue.js</span>
-      <span class="tech-pill">PostgreSQL</span>
-    </div>
-
-    <!-- Action / Contact Buttons -->
-    <div class="hero-actions">
-      <a href="mailto:{{ contactInfo.email }}" draggable="false" class="action-btn action-primary" title="Enviar Email">
-        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-          <polyline points="22,6 12,13 2,6"></polyline>
-        </svg>
-        <span>{{ ts.t.hero.emailBtn }}</span>
-      </a>
-
-      <a href="{{ contactInfo.github }}" target="_blank" rel="noopener noreferrer" draggable="false" class="action-btn action-secondary" title="Ver GitHub">
-        <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-        </svg>
-        <span>{{ ts.t.hero.githubBtn }}</span>
-      </a>
-
-      <a href="https://wa.me/{{ contactInfo.phoneClean }}" target="_blank" rel="noopener noreferrer" draggable="false" class="action-btn action-secondary" title="Enviar WhatsApp">
-        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-        </svg>
-        <span>{{ ts.t.hero.whatsappBtn }}</span>
-      </a>
-
-      <div class="location-badge">
-        <svg class="btn-icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-          <circle cx="12" cy="10" r="3"></circle>
-        </svg>
-        <span>{{ ts.t.hero.location }}</span>
-      </div>
     </div>
   </header>
 
-  <!-- Navigation & Main Content Tabs -->
-  <main class="main-content">
-    <mat-tab-group fitInkBarToContent animationDuration="250ms">
-      <mat-tab>
-        <ng-template mat-tab-label>
-          <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-            <polyline points="14 2 14 8 20 8"></polyline>
-            <line x1="16" y1="13" x2="8" y2="13"></line>
-            <line x1="16" y1="17" x2="8" y2="17"></line>
-            <polyline points="10 9 9 9 8 9"></polyline>
-          </svg>
-          <span>{{ ts.t.hero.tabCV }}</span>
-        </ng-template>
-        <app-curriculum [chips]="chipsApp"></app-curriculum>
-      </mat-tab>
+  <!-- C: Asymmetric Editorial Hero + Hanging Dev Pass -->
+  <section class="hero-editorial animate-fade-in">
+    <div class="hero-copy">
+      <div class="hero-kicker">
+        <span class="kicker-num">00</span>
+        <span class="kicker-line"></span>
+        <span class="kicker-loc">{{ ts.t.hero.location }}</span>
+      </div>
 
-      <mat-tab>
-        <ng-template mat-tab-label>
-          <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
-            <polyline points="2 17 12 22 22 17"></polyline>
-            <polyline points="2 12 12 17 22 12"></polyline>
+      <h1 class="hero-name">
+        <span class="name-line">{{ contactInfo.firstName }}</span>
+        <span class="name-line">
+          <em class="name-italic">{{ contactInfo.lastName }}</em>
+          {{ contactInfo.secondLastName }}
+        </span>
+      </h1>
+
+      <p class="hero-subtitle">{{ ts.t.hero.role }}</p>
+
+      <div class="hero-actions">
+        <a href="mailto:{{ contactInfo.email }}" draggable="false" class="action-btn action-primary" title="Enviar Email">
+          <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
           </svg>
-          <span>{{ ts.t.hero.tabProjects }}</span>
-        </ng-template>
-        <app-about [chips]="chipsApp"></app-about>
-      </mat-tab>
-    </mat-tab-group>
+          <span>{{ ts.t.hero.emailBtn }}</span>
+        </a>
+
+        <a href="{{ contactInfo.github }}" target="_blank" rel="noopener noreferrer" draggable="false" class="action-btn action-secondary" title="Ver GitHub">
+          <span>{{ ts.t.hero.githubBtn }}</span>
+          <span class="btn-arrow" aria-hidden="true">↗</span>
+        </a>
+
+        <a href="https://wa.me/{{ contactInfo.phoneClean }}" target="_blank" rel="noopener noreferrer" draggable="false" class="action-btn action-secondary" title="Enviar WhatsApp">
+          <span>{{ ts.t.hero.whatsappBtn }}</span>
+          <span class="btn-arrow" aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Credencial / Press Pass -->
+    <div class="hero-pass-wrap">
+      <a
+        [href]="contactInfo.github"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="dev-pass"
+        title="GitHub · {{ contactInfo.githubUser }}"
+      >
+        <div class="pass-punch" aria-hidden="true"></div>
+
+        <div class="pass-top">
+          <span class="pass-label">{{ ts.t.hero.passLabel }}</span>
+          <span class="pass-serial">#JMG-26</span>
+        </div>
+
+        <div class="pass-photo">
+          <img
+            src="assets/images/avatar.jpg"
+            [alt]="contactInfo.name"
+            draggable="false"
+            width="200"
+            height="220"
+            fetchpriority="high"
+            loading="eager"
+            decoding="async"
+          />
+        </div>
+
+        <div class="pass-meta">
+          <span class="pass-name">{{ contactInfo.shortName }}</span>
+          <span class="pass-role">{{ ts.t.hero.passRole }}</span>
+          <span class="pass-handle">{{ contactInfo.githubUser }}</span>
+        </div>
+
+        <div class="pass-barcode" aria-hidden="true">
+          <svg viewBox="0 0 180 24" preserveAspectRatio="none">
+            <rect x="0" width="4" height="24"/>
+            <rect x="7" width="2" height="24"/>
+            <rect x="12" width="6" height="24"/>
+            <rect x="22" width="2" height="24"/>
+            <rect x="27" width="4" height="24"/>
+            <rect x="35" width="8" height="24"/>
+            <rect x="46" width="2" height="24"/>
+            <rect x="51" width="4" height="24"/>
+            <rect x="59" width="2" height="24"/>
+            <rect x="65" width="6" height="24"/>
+            <rect x="74" width="2" height="24"/>
+            <rect x="80" width="8" height="24"/>
+            <rect x="92" width="2" height="24"/>
+            <rect x="97" width="4" height="24"/>
+            <rect x="105" width="6" height="24"/>
+            <rect x="115" width="2" height="24"/>
+            <rect x="120" width="4" height="24"/>
+            <rect x="128" width="8" height="24"/>
+            <rect x="140" width="2" height="24"/>
+            <rect x="145" width="4" height="24"/>
+            <rect x="153" width="6" height="24"/>
+            <rect x="163" width="2" height="24"/>
+            <rect x="168" width="4" height="24"/>
+            <rect x="176" width="4" height="24"/>
+          </svg>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- Moving Tech Stack Marquee -->
+  <div class="marquee-band" aria-label="Tech stack">
+    <div class="marquee-inner">
+      @for (copy of [0, 1]; track copy) {
+        <div class="marquee-track" [attr.aria-hidden]="copy === 1 ? 'true' : null">
+          @for (item of marquee; track item) {
+            <span class="marquee-item">{{ item }}</span>
+            <span class="marquee-dot" aria-hidden="true">✦</span>
+          }
+        </div>
+      }
+    </div>
+  </div>
+
+  <!-- Numbered Index + Editorial Stream -->
+  <main class="editorial-body">
+    <aside class="editorial-index">
+      <div class="index-sticky">
+        <span class="index-heading">{{ ts.t.nav.label }}</span>
+        <nav class="index-nav" aria-label="Section index">
+          @for (s of sections; track s.id) {
+            <a
+              [href]="'#' + s.id"
+              class="index-link"
+              [class.active]="activeSection() === s.id"
+              (click)="goTo($event, s.id)"
+            >
+              <span class="index-num">{{ s.num }}</span>
+              <span class="index-rule"></span>
+              <span class="index-label">{{ ts.t.nav[s.key] }}</span>
+            </a>
+          }
+        </nav>
+
+        <div class="index-Quicklinks">
+          <a href="mailto:{{ contactInfo.email }}" class="index-mini-link">MAIL</a>
+          <span>·</span>
+          <a [href]="contactInfo.github" target="_blank" rel="noopener noreferrer" class="index-mini-link">GH</a>
+          <span>·</span>
+          <a href="https://wa.me/{{ contactInfo.phoneClean }}" target="_blank" rel="noopener noreferrer" class="index-mini-link">WA</a>
+        </div>
+      </div>
+    </aside>
+
+    <div class="editorial-stream">
+      <app-curriculum></app-curriculum>
+      <app-projects></app-projects>
+      <app-about></app-about>
+    </div>
   </main>
 
   <!-- Footer -->
   <footer class="app-footer">
     <div class="footer-container">
-      <div class="footer-left">
-        <p class="footer-copy">{{ ts.t.hero.footerCopy }}</p>
-      </div>
+      <p class="footer-copy">{{ ts.t.hero.footerCopy }}</p>
       <div class="footer-links">
-        <a href="{{ contactInfo.github }}" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub</a>
-        <span class="footer-dot">•</span>
+        <a [href]="contactInfo.github" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub</a>
+        <span class="footer-dot">/</span>
         <a href="mailto:{{ contactInfo.email }}" class="footer-link">Email</a>
-        <span class="footer-dot">•</span>
+        <span class="footer-dot">/</span>
         <a href="https://wa.me/{{ contactInfo.phoneClean }}" target="_blank" rel="noopener noreferrer" class="footer-link">WhatsApp</a>
       </div>
     </div>

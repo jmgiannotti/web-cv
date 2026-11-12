@@ -2,6 +2,8 @@ import { Injectable, signal } from '@angular/core';
 
 export type Language = 'es' | 'en';
 
+export type NavKey = 'profile' | 'experience' | 'projects' | 'stack' | 'education' | 'about';
+
 export interface ProjectData {
   title: string;
   type: string;
@@ -38,7 +40,7 @@ export class TranslationService {
   readonly content = {
     es: {
       hero: {
-        status: 'Disponible para nuevos desafíos',
+        status: 'Disponible',
         role: 'Desarrollador Fullstack & Estudiante de Ing. en Informática',
         location: 'CABA, Argentina',
         emailBtn: 'Email',
@@ -46,9 +48,21 @@ export class TranslationService {
         whatsappBtn: 'WhatsApp',
         tabCV: 'Curriculum Vitae',
         tabProjects: 'Sobre mí & Proyectos',
-        footerCopy: '© 2026 Juan Martín Giannotti Calens - Desarrollador Fullstack'
+        footerCopy: '© 2026 Juan Martín Giannotti Calens - Desarrollador Fullstack',
+        passLabel: 'PASE DEV',
+        passRole: 'Fullstack Developer'
+      },
+      nav: {
+        label: 'Índice',
+        profile: 'Perfil',
+        experience: 'Experiencia',
+        projects: 'Proyectos',
+        stack: 'Stack',
+        education: 'Formación',
+        about: 'Sobre mí'
       },
       cv: {
+        locationLabel: 'Ubicación',
         profileTitle: 'Perfil Profesional',
         profileSub: 'Acerca de mi enfoque y objetivos',
         profileTxt: 'Estudiante de Ingeniería en Informática con pasión por el aprendizaje continuo y la resolución de desafíos técnicos. Destaco por mi capacidad para trabajar en equipo, comunicación efectiva y disciplina, habilidades desarrolladas en proyectos colaborativos. Poseo un nivel avanzado de inglés, adquirido mediante estudios formales.',
@@ -221,7 +235,7 @@ export class TranslationService {
     },
     en: {
       hero: {
-        status: 'Available for new opportunities',
+        status: 'Available',
         role: 'Fullstack Developer & Informatics Engineering Student',
         location: 'Buenos Aires, Argentina',
         emailBtn: 'Email',
@@ -229,9 +243,21 @@ export class TranslationService {
         whatsappBtn: 'WhatsApp',
         tabCV: 'Resume / CV',
         tabProjects: 'About Me & Projects',
-        footerCopy: '© 2026 Juan Martín Giannotti Calens - Fullstack Developer'
+        footerCopy: '© 2026 Juan Martín Giannotti Calens - Fullstack Developer',
+        passLabel: 'DEV PASS',
+        passRole: 'Fullstack Developer'
+      },
+      nav: {
+        label: 'Index',
+        profile: 'Profile',
+        experience: 'Experience',
+        projects: 'Projects',
+        stack: 'Stack',
+        education: 'Education',
+        about: 'About'
       },
       cv: {
+        locationLabel: 'Location',
         profileTitle: 'Professional Profile',
         profileSub: 'About my technical focus and career goals',
         profileTxt: 'Informatics Engineering student passionate about continuous learning and technical problem solving. Recognized for teamwork, effective communication, and discipline developed across collaborative software projects. Advanced English proficiency acquired through formal education.',

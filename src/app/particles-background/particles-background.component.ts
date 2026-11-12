@@ -18,7 +18,7 @@ export class ParticlesBackgroundComponent {
   particlesOptions: ISourceOptions = {
     background: {
       color: {
-        value: "#090d16"
+        value: "#0b0b0a"
       }
     },
     particles: {
@@ -26,7 +26,7 @@ export class ParticlesBackgroundComponent {
         value: 80
       },
       color: {
-        value: "#38bdf8"
+        value: "#c6f432"
       },
       shape: {
         type: "circle"
