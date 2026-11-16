@@ -318,7 +318,44 @@
     gap: 1rem;
   }
 
+  .perfil-lead {
+    font-size: 1rem;
+  }
+
+  .exp-entry {
+    padding: 1.25rem;
+  }
+
+  /* Period, duration and type read as one line above the role */
+  .exp-aside {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .exp-type-tag {
+    margin-top: 0;
+  }
+
+  .exp-role {
+    font-size: 1.3rem;
+  }
+
   .stack-matrix {
     grid-template-columns: 1fr;
+  }
+
+  .stack-cell {
+    padding: 1.15rem;
+  }
+
+  .edu-row {
+    gap: 0.5rem;
+    padding: 1.15rem 0;
+  }
+
+  .edu-degree {
+    font-size: 1.2rem;
   }
 }

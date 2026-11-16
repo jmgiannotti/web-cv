@@ -17,12 +17,13 @@ export class ProjectsComponent {
   hoveredIndex = signal<number | null>(null);
 
   openDrawer(project: ProjectData, index: number): void {
+    const isNarrow = typeof window !== 'undefined' && window.innerWidth < 640;
     this.dialog.open(DialogComponent, {
       data: { ...project, index: index + 1 },
       position: { right: '0', top: '0' },
       height: '100dvh',
       maxHeight: '100dvh',
-      width: 'min(720px, 94vw)',
+      width: isNarrow ? '100vw' : 'min(720px, 94vw)',
       maxWidth: '100vw',
       panelClass: 'side-drawer-dialog-panel',
       backdropClass: 'side-drawer-backdrop',

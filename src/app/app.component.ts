@@ -32,8 +32,6 @@ export class AppComponent implements AfterViewInit, OnDestroy {
     secondLastName: 'Calens',
     shortName: 'Juan M. Giannotti',
     email: 'juanmartingiannotti@gmail.com',
-    phone: '+(54) 911 59481529',
-    phoneClean: '5491159481529',
     github: 'https://github.com/jmgiannotti',
     githubUser: '@jmgiannotti',
   };
@@ -61,7 +59,7 @@ export class AppComponent implements AfterViewInit, OnDestroy {
     this.observer = new IntersectionObserver(
       entries => {
         for (const entry of entries) {
-          if (entry.isIntersecting) this.activeSection.set(entry.target.id);
+          if (entry.isIntersecting) this.setActive(entry.target.id);
         }
       },
       // A thin band around 40% of the viewport height decides the active section
@@ -83,7 +81,25 @@ export class AppComponent implements AfterViewInit, OnDestroy {
     const el = document.getElementById(id);
     if (!el) return;
     el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    this.activeSection.set(id);
+    this.setActive(id);
     history.replaceState(null, '', `#${id}`);
+  }
+
+  private setActive(id: string): void {
+    this.activeSection.set(id);
+    this.centerIndexLink(id);
+  }
+
+  /**
+   * On mobile the index is a horizontally scrolling bar; keep the active link visible.
+   * Scrolls only the bar itself (never scrollIntoView, which would fight the page's smooth scroll).
+   */
+  private centerIndexLink(id: string): void {
+    const nav = document.querySelector<HTMLElement>('.index-nav');
+    if (!nav || nav.scrollWidth <= nav.clientWidth) return;
+    const link = nav.querySelector<HTMLElement>(`a[href="#${id}"]`);
+    if (!link) return;
+    const left = link.offsetLeft - (nav.clientWidth - link.offsetWidth) / 2;
+    nav.scrollTo({ left: Math.max(0, left), behavior: 'smooth' });
   }
 }

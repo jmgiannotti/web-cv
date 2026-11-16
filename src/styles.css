@@ -470,6 +470,19 @@ img, svg {
   padding: 0 !important;
   box-shadow: -24px 0 60px rgba(0, 0, 0, 0.8) !important;
   overflow: hidden !important;
-  animation: drawerSlideInRight 0.32s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  /* No fill-mode: a lingering transform would trap the carousel's fixed lightbox inside the drawer */
+  animation: drawerSlideInRight 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (max-width: 960px) {
+  .ed-section {
+    /* Leave room for the sticky horizontal index bar */
+    scroll-margin-top: 4.25rem;
+  }
+
+  h2.ed-section-title,
+  .ed-section-title {
+    font-size: 1.55rem;
+  }
 }
 

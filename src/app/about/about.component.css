@@ -59,5 +59,10 @@
 @media (max-width: 820px) {
   .about-editorial-grid {
     grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .about-block {
+    padding: 1.15rem;
   }
 }
